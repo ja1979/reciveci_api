@@ -1,6 +1,16 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+
+  # GET /articles/last.json
+  def last
+    @articles = Article.order('created_at DESC').limit(5)
+    respond_to do |format|
+      format.json { render json: @articles }
+    end
+  end
+
+
   # GET /articles
   # GET /articles.json
   def index
