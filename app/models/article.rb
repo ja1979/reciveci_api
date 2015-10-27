@@ -9,11 +9,8 @@ class Article < ActiveRecord::Base
 
 	def image_url
 
-		puts "***********************"
-		puts ENV["OPENSHIFT_HOMEDIR"]
-		puts ENV["OPENSHIFT_REPO_DIR"]
-
-		base_path = "/home/vagrant/Projects/reciveci/reciveci_api/public/"
+		current_path = Dir.pwd		
+		base_path = current_path + "/public/"
 		image_path = "assets/images/articles/#{id}.jpg"
 
 		image_path if File.exist?(base_path + image_path)
