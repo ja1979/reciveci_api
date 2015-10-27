@@ -5,8 +5,10 @@ class ArticlesController < ApplicationController
   # GET /articles/last.json
   def last
     @articles = Article.order('created_at DESC').limit(5)
+    #@articles[0].image_url = 'Hola'    
+    #puts @articles[0].image_url
     respond_to do |format|
-      format.json { render json: @articles }
+      format.json { render json: @articles, methods: [:image_url] }
     end
   end
 
