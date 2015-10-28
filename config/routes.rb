@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :articles
   #resources :articles, :defaults => { :format => :json }
 
-  #get 'articles_last' => 'articles#last'
+  get 'articles_last' => 'articles#last'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all    
+    @articles = Article.order('id DESC')
     respond_to do |format|
       format.html
       format.json { render json: @articles }
