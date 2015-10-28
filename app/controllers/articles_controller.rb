@@ -26,6 +26,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @article, methods: [:image_url] }
+    end
   end
 
   # GET /articles/new
