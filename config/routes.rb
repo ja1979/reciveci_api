@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :subcategories
+
+  resources :categories
+
   resources :waste_pickers
 
   resources :articles
