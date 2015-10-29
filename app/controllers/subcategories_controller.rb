@@ -65,7 +65,6 @@ class SubcategoriesController < ApplicationController
   def by_category
     @subcategories = Subcategory.where(category_id: params[:category_id])
     respond_to do |format|
-      format.html { @subcategories.to_json }
       format.json { render json:@subcategories }
     end
   end

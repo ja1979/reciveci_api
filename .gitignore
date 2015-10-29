@@ -17,5 +17,4 @@
 
 .project
 /db/schema.rb
-
-.openshift/config/
+/config/localdatabase.yml

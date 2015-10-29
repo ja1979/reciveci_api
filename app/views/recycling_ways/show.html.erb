@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recycling_way.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recycling_way.description %>
+</p>
+
+<p>
+  <strong>Subcategory:</strong>
+  <%= @recycling_way.subcategory %>
+</p>
+
+<%= link_to 'Edit', edit_recycling_way_path(@recycling_way) %> |
+<%= link_to 'Back', recycling_ways_path %>

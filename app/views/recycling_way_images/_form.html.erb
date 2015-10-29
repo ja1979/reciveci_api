@@ -1,0 +1,29 @@
+<%= form_for(@recycling_way_image) do |f| %>
+  <% if @recycling_way_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recycling_way_image.errors.count, "error") %> prohibited this recycling_way_image from being saved:</h2>
+
+      <ul>
+      <% @recycling_way_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :recyclingWay_id %><br>
+    <%= f.text_field :recyclingWay_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
