@@ -60,6 +60,15 @@ class SubcategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def by_category
+    @subcategories = Subcategory.where(category_id: params[:category_id])
+    respond_to do |format|
+      format.html { @subcategories.to_json }
+      format.json { render json:@subcategories }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

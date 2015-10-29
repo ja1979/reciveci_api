@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :subcategories
+  
+  get 'subcategories_by_category/:category_id' => 'subcategories#by_category'
 
   resources :categories
 
