@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :recycling_way_images
+  get 'images_by_recycling_way/:recycling_way_id' => 'recycling_way_images#by_recycling_way'
+
+  resources :recycling_ways
+  get 'recycling_ways_by_subcategory/:subcategory_id' => 'recycling_ways#by_subcategory'
+
+  resources :subcategories
+  
+  get 'subcategories_by_category/:category_id' => 'subcategories#by_category'
+
+  resources :categories
+
   resources :waste_pickers
 
   resources :articles

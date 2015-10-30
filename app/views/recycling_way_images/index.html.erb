@@ -1,0 +1,29 @@
+<h1>Listing recycling_way_images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Recyclingway</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recycling_way_images.each do |recycling_way_image| %>
+      <tr>
+        <td><%= recycling_way_image.title %></td>
+        <td><%= recycling_way_image.url %></td>
+        <td><%= recycling_way_image.recyclingWay %></td>
+        <td><%= link_to 'Show', recycling_way_image %></td>
+        <td><%= link_to 'Edit', edit_recycling_way_image_path(recycling_way_image) %></td>
+        <td><%= link_to 'Destroy', recycling_way_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recycling way image', new_recycling_way_image_path %>
