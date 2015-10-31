@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029014836) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20151031135129) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -30,6 +27,46 @@ ActiveRecord::Schema.define(version: 20151029014836) do
     t.datetime "updated_at"
   end
 
+  create_table "line_strings", force: true do |t|
+    t.string   "name"
+    t.string   "coordinates"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "route_id"
+  end
+
+  add_index "line_strings", ["route_id"], name: "index_line_strings_on_route_id"
+
+  create_table "recycling_way_images", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "recyclingWay_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recycling_way_images", ["recyclingWay_id"], name: "index_recycling_way_images_on_recyclingWay_id"
+
+  create_table "recycling_ways", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "subcategory_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recycling_ways", ["subcategory_id"], name: "index_recycling_ways_on_subcategory_id"
+
+  create_table "routes", force: true do |t|
+    t.string   "name"
+    t.string   "schedule"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "waste_picker_id"
+  end
+
+  add_index "routes", ["waste_picker_id"], name: "index_routes_on_waste_picker_id"
+
   create_table "subcategories", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -38,7 +75,7 @@ ActiveRecord::Schema.define(version: 20151029014836) do
     t.datetime "updated_at"
   end
 
-  add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id", using: :btree
+  add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "waste_pickers", force: true do |t|
     t.string   "name"

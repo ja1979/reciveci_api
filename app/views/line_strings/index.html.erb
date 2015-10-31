@@ -1,0 +1,27 @@
+<h1>Listing line_strings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Coordinates</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_strings.each do |line_string| %>
+      <tr>
+        <td><%= line_string.name %></td>
+        <td><%= line_string.coordinates %></td>
+        <td><%= link_to 'Show', line_string %></td>
+        <td><%= link_to 'Edit', edit_line_string_path(line_string) %></td>
+        <td><%= link_to 'Destroy', line_string, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line string', new_line_string_path %>

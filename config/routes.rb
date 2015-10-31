@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :line_strings
+
+  get 'map/routes'
+
+  resources :routes
+
   resources :recycling_way_images
   get 'images_by_recycling_way/:recycling_way_id' => 'recycling_way_images#by_recycling_way'
 
@@ -18,6 +24,8 @@ Rails.application.routes.draw do
   #resources :articles, :defaults => { :format => :json }
 
   get 'articles_last' => 'articles#last'
+
+  get 'map/routes'
 
 
 

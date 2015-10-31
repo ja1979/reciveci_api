@@ -1,5 +1,8 @@
 class WastePicker < ActiveRecord::Base
 
+
+	has_many :routes
+
 	def image_url
 
 		current_path = Dir.pwd		

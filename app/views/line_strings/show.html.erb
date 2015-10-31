@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @line_string.name %>
+</p>
+
+<p>
+  <strong>Coordinates:</strong>
+  <%= @line_string.coordinates %>
+</p>
+
+<%= link_to 'Edit', edit_line_string_path(@line_string) %> |
+<%= link_to 'Back', line_strings_path %>
