@@ -20,9 +20,10 @@ class MapController < ApplicationController
           :'line_string-name' => line_string.name,
           :'waste_picker-name' => line_string.route.waste_picker.name,
           :'waste_picker-id' => line_string.route.waste_picker.id,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium',
+          :'waste_picker-image_url' => line_string.route.waste_picker.image_url,
+          :'color' => line_string.route.color,
+          :'line-weight' => 6,
+          :'line-opacity' => 0.4,
           popup: "<img src='#{line_string.route.waste_picker.image_url}'/><br><strong>Reciclador:</strong> <a target='_blank' href='waste_pickers/#{line_string.route.waste_picker.id}'>#{line_string.route.waste_picker.name}</a><br><strong>Horario:</strong> #{line_string.route.schedule}"
         }
       }
