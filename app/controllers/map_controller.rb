@@ -22,7 +22,8 @@ class MapController < ApplicationController
           :'waste_picker-id' => line_string.route.waste_picker.id,
           :'marker-color' => '#00607d',
           :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
+          :'marker-size' => 'medium',
+          popup: "<img src='#{line_string.route.waste_picker.image_url}'/><br><strong>Reciclador:</strong> <a target='_blank' href='waste_pickers/#{line_string.route.waste_picker.id}'>#{line_string.route.waste_picker.name}</a><br><strong>Horario:</strong> #{line_string.route.schedule}"
         }
       }
     end

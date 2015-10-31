@@ -22,76 +22,50 @@
   }).addTo(map);
 
 
-      var district_boundary = new L.geoJson();
-      district_boundary.addTo(map);
-      var routes;
+    var district_boundary = new L.geoJson();
+    district_boundary.addTo(map);
+    var routes;
 
 
-     $.getJSON("map/routes.json", function(data) {
-        routes = data ;
-        //console.log(routes);
-        L.geoJson(routes).addTo(map);
-      });
-
-
-
-
-      var popup = L.popup();
-      
-      function onMapClick(e)  {
-          popup
-              .setLatLng(e.latlng)
-              .setContent(e.latlng.lng + ", " + e.latlng.lat)
-              .openOn(map);
-      }
-
-      map.on('click', onMapClick);
-
-
-
-
-
-    var geojsonFeature = { "type": "FeatureCollection",
-      "features": [{
-        "type": "Feature",
-        "properties": {
-            "id": 2,
-            "wastePicker": "Vero"
-        },
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [[-78.47937047481537, -0.17719180949580993],
-                           [-78.47825, -0.17736],
-                           [-78.47813,-0.17763],
-                           [-78.47823,-0.17813],
-                           [-78.47882,-0.17807]]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "id": 2,
-            "wastePicker": "Vero"
-        },
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [[-78.47913980484009, -0.17881185592262727],
-                           [-78.47838878631592, -0.1789566945035113],
-                           [-78.4784746170044, -0.1795735995574245]]
+    function onEachFeature(feature, layer) {
+        // does this feature have a property named popupContent?
+        if (feature.properties && feature.properties.schedule) {
+            console.log("Setting popup...");
+            layer.bindPopup(feature.properties.popup);
         }
     }
-    ]
-  };
+
+
+   $.getJSON("map/routes.json", function(data) {
+
+      var myStyle = {
+          "color": "#1145ff",
+          "weight": 6,
+          "opacity": 0.4
+      };  
+
+      routes = data ;
+      //console.log(routes);
+      L.geoJson(routes, {style: myStyle, onEachFeature: onEachFeature}).addTo(map);
+    });
+
+
+
+
+    var popup = L.popup();
+    
+    function onMapClick(e)  {
+        popup
+            .setLatLng(e.latlng)
+            .setContent(e.latlng.lng + ", " + e.latlng.lat)
+            .openOn(map);
+    }
+
+    map.on('click', onMapClick);
+
 
 
   
-
-
-    var myStyle = {
-        "color": "#ff7800",
-        "weight": 6,
-        "opacity": 0.65
-    };    
 
 //    L.geoJson(geojsonFeature, {
 //        style: myStyle
