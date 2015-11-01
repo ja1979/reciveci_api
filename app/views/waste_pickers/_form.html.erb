@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
+    <%= f.date_select :birth_date, start_year: Date.today.year-90, end_year: Date.today.year-18 %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date, start_year: Date.today.year-72, end_year: Date.today.year %>
   </div>
   <div class="field">
     <%= f.label :background %><br>
