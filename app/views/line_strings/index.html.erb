@@ -13,7 +13,7 @@
     <% @line_strings.each do |line_string| %>
       <tr>
         <td><%= line_string.name %></td>
-        <td><%= line_string.route.name %></td>
+        <td><%= line_string.route ? line_string.route.name : 'N/A' %></td>
         <td><%= link_to 'Show', line_string %></td>
         <td><%= link_to 'Edit', edit_line_string_path(line_string) %></td>
         <td><%= link_to 'Destroy', line_string, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,7 +17,7 @@
 
 <p>
   <strong>Waste Picker:</strong>
-  <%= @route.waste_picker.name %>
+  <%= @route.waste_picker ? @route.waste_picker.name : 'N/A' %>
 </p>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Route:</strong>
-  <%= @line_string.route.name %>
+  <%= @line_string.route ? @line_string.route.name : 'N/A' %>
 </p>
 
 <%= link_to 'Edit', edit_line_string_path(@line_string) %> |
