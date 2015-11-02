@@ -73,7 +73,7 @@ class LineStringsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_string_params
-      params.require(:line_string).permit(:name, :coordinates)
+      params.require(:line_string).permit(:name, :coordinates, :route_id)
     end
 
     def prepare_routes
