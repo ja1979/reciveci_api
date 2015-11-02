@@ -1,8 +1,8 @@
 class RoutesController < ApplicationController
-  
-
-
+   
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+
+  before_action :prepare_waste_pickers, only: [:new, :edit]
 
 
   # GET /routes
@@ -73,6 +73,11 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:name, :schedule, :color)
+      params.require(:route).permit(:name, :schedule, :color, :waste_picker_id)
     end
+
+    def prepare_waste_pickers
+      @waste_pickers = WastePicker.all
+    end
+
 end

@@ -1,5 +1,9 @@
 class LineStringsController < ApplicationController
+  
   before_action :set_line_string, only: [:show, :edit, :update, :destroy]
+
+  before_action :prepare_routes, only: [:new, :edit]
+
 
   # GET /line_strings
   # GET /line_strings.json
@@ -70,5 +74,9 @@ class LineStringsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_string_params
       params.require(:line_string).permit(:name, :coordinates)
+    end
+
+    def prepare_routes
+      @routes = Route.all
     end
 end

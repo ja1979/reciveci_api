@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031233156) do
+ActiveRecord::Schema.define(version: 20151101005002) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20151031233156) do
 
   create_table "line_strings", force: true do |t|
     t.string   "name"
-    t.string   "coordinates"
+    t.text     "coordinates", limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "route_id"

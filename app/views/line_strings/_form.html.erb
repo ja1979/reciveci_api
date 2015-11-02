@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :coordinates %><br>
-    <%= f.text_field :coordinates %>
+    <%= f.text_area :coordinates %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br />
+    <%= f.collection_select(:route_id, @routes, :id, :name, :include_blank => "Please select") %>
   </div>
   <div class="actions">
     <%= f.submit %>

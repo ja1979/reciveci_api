@@ -10,5 +10,10 @@
   <%= @line_string.coordinates %>
 </p>
 
+<p>
+  <strong>Route:</strong>
+  <%= @line_string.route.name %>
+</p>
+
 <%= link_to 'Edit', edit_line_string_path(@line_string) %> |
 <%= link_to 'Back', line_strings_path %>
