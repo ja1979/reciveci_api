@@ -39,14 +39,11 @@
 
 
     function style(feature) {
-      return {color: feature.properties.color};
+      return {color: feature.properties.color,
+              weight: feature.properties.weight,
+              opacity: feature.properties.opacity};
     }
 
-
-
-    var district_boundary = new L.geoJson();
-    district_boundary.addTo(map);
-    var routes;
 
 
     function onEachFeature(feature, layer) {
@@ -58,13 +55,9 @@
     }
 
 
-   $.getJSON("map/routes.json", function(data) {
+    var routes;
 
-      var myStyle = {
-          "color": "#1145ff",
-          "weight": 6,
-          "opacity": 0.4
-      };  
+   $.getJSON("map/routes.json", function(data) {
 
       routes = data ;
       //console.log(routes);
