@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @route.name %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @route.schedule %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @route.color %>
+</p>
+
+<p>
+  <strong>Waste Picker:</strong>
+  <%= @route.waste_picker ? @route.waste_picker.name : 'N/A' %>
+</p>
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

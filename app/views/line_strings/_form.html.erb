@@ -1,0 +1,29 @@
+<%= form_for(@line_string) do |f| %>
+  <% if @line_string.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@line_string.errors.count, "error") %> prohibited this line_string from being saved:</h2>
+
+      <ul>
+      <% @line_string.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinates %><br>
+    <%= f.text_area :coordinates %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br />
+    <%= f.collection_select(:route_id, @routes, :id, :name, :include_blank => "Please select") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
