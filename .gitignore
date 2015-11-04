@@ -18,3 +18,5 @@
 .project
 /db/schema.rb
 /config/localdatabase.yml
+
+*.log

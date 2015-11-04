@@ -15,7 +15,7 @@
           padding: 0;
           margin: 0;
       }
-      html, body, #map {
+      html, body, #map2 {
           height: 100%;
       }
    </style>   
@@ -24,19 +24,24 @@
 <body>
 
 	 <!--div id="map" style="width: 400px; height: 600px"></div-->
-   <div id="map"></div>
+   <div id="map2"></div>
 
 	<script>
 
-		var map = L.map('map').setView([-0.181451, -78.480030], 16);
+		var map = L.map('map2').setView([-0.181451, -78.480030], 16);
 
 
   		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
       attribution: 'Map data &copy; <a href="http://openo streetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      maxZoom: 20,
+      maxZoom: 18,
       id: 'mapbox.streets'
   }).addTo(map);
 
+/*
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18     
+  }).addTo(map);
+  */
 
     function style(feature) {
       return {color: feature.properties.color,
