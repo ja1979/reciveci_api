@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101005002) do
+ActiveRecord::Schema.define(version: 20151108172635) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151101005002) do
   end
 
   create_table "line_strings", force: true do |t|
-    t.string   "name"
+    t.string   "name",                    null: false
     t.text     "coordinates", limit: 255, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 20151101005002) do
   add_index "recycling_ways", ["subcategory_id"], name: "index_recycling_ways_on_subcategory_id"
 
   create_table "routes", force: true do |t|
-    t.string   "name"
-    t.string   "schedule"
+    t.string   "name",            null: false
+    t.string   "schedule",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "waste_picker_id"
-    t.string   "color"
+    t.string   "color",           null: false
   end
 
   add_index "routes", ["waste_picker_id"], name: "index_routes_on_waste_picker_id"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20151101005002) do
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "waste_pickers", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.date     "birth_date"
     t.date     "start_date"
     t.text     "background"

@@ -2,7 +2,7 @@ class MapController < ApplicationController
 
 
   def routes
-    @line_strings = LineString.all
+    @line_strings = LineString.where("route_id is not null")
 
 
     url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
