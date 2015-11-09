@@ -1,14 +1,32 @@
+include Utils
+
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
 
   # GET /articles/last.json
   def last
-    @articles = Article.order('created_at DESC').limit(5)
-    #@articles[0].image_url = 'Hola'    
-    #puts @articles[0].image_url
+    @articles = Article.order('created_at DESC').limit(10)
+
+
+    #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
+    url_prefix = serverUrl(request)
+
+
+    @result = Array.new
+
+    @articles.each do |article|
+      @result << {
+        id: article.id,
+        title: article.title,
+        content: article.content,
+        image_url: article.image_url ? url_prefix + article.image_url : nil,
+        created_at: article.created_at
+        }
+    end
+
     respond_to do |format|
-      format.json { render json: @articles, methods: [:image_url] }
+      format.json { render json: @result }
     end
   end
 

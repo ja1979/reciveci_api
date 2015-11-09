@@ -1,11 +1,26 @@
+include Utils
+
 class MapController < ApplicationController
 
 
+  after_filter :cors_set_access_control_headers
+
+
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Max-Age'] = "1728000"
+  end
+
+
   def routes
+    
     @line_strings = LineString.where("route_id is not null")
 
 
-    url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
+    #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
+    url_prefix = serverUrl(request)
+
 
     @geojson = Array.new
 
