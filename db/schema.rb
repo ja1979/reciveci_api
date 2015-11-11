@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108172635) do
+ActiveRecord::Schema.define(version: 20151111211318) do
+
+  create_table "affiliations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -79,13 +85,16 @@ ActiveRecord::Schema.define(version: 20151108172635) do
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "waste_pickers", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",           null: false
     t.date     "birth_date"
     t.date     "start_date"
     t.text     "background"
     t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "affiliation_id"
   end
+
+  add_index "waste_pickers", ["affiliation_id"], name: "index_waste_pickers_on_affiliation_id"
 
 end

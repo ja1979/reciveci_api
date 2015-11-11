@@ -1,5 +1,6 @@
 class WastePicker < ActiveRecord::Base
 
+	belongs_to :affiliation
 
 	has_many :routes
 

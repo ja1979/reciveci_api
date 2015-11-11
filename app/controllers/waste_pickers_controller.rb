@@ -1,5 +1,7 @@
 class WastePickersController < ApplicationController
   before_action :set_waste_picker, only: [:show, :edit, :update, :destroy]
+  before_action :prepare_affiliations, only: [:new, :edit]
+
 
   # GET /waste_pickers
   # GET /waste_pickers.json
@@ -69,6 +71,10 @@ class WastePickersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def waste_picker_params
-      params.require(:waste_picker).permit(:name, :birth_date, :start_date, :background, :message)
+      params.require(:waste_picker).permit(:name, :birth_date, :start_date, :background, :message, :affiliation_id)
+    end
+
+    def prepare_affiliations
+      @affiliations = Affiliation.all
     end
 end

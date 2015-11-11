@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Affiliation</th>
       <th>Birth date</th>
       <th>Start date</th>
       <th>Background</th>
@@ -16,6 +17,7 @@
     <% @waste_pickers.each do |waste_picker| %>
       <tr>
         <td><%= waste_picker.name %></td>
+        <td><%= waste_picker.affiliation ? waste_picker.affiliation.name : 'N/A' %></td>
         <td><%= waste_picker.birth_date %></td>
         <td><%= waste_picker.start_date %></td>
         <td><%= waste_picker.background %></td>

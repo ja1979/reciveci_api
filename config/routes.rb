@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :affiliations
+
   resources :line_strings
 
   get 'map/routes'

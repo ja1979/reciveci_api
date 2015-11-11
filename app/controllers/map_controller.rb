@@ -38,8 +38,12 @@ class MapController < ApplicationController
           :'waste_picker-name' => line_string.route.waste_picker.name,
           :'waste_picker-id' => line_string.route.waste_picker.id,
           :'waste_picker-image_url' => url_prefix + line_string.route.waste_picker.image_url,
+          :'waste_picker-message' => line_string.route.waste_picker.message,
+          :'waste_picker-birth_date' => line_string.route.waste_picker.birth_date,
+          :'waste_picker-start_date' => line_string.route.waste_picker.start_date,
+          :'affiliation-name' => (line_string.route.waste_picker.affiliation.name unless line_string.route.waste_picker.affiliation == nil),
           :'color' => line_string.route.color,
-          :'weight' => 10,
+          :'weight' => 15,
           :'opacity' => 0.4,
           popup: "<img src='#{url_prefix}#{line_string.route.waste_picker.image_url}'/>" +
                  "<br>" + 

@@ -16,6 +16,10 @@
     <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
+    <%= f.label :affiliation %><br />
+    <%= f.collection_select(:affiliation_id, @affiliations, :id, :name, :include_blank => "Please select") %>
+  </div>
+  <div class="field">
     <%= f.label :birth_date %><br>
     <%= f.date_select :birth_date, start_year: Date.today.year-90, end_year: Date.today.year-18 %>
   </div>
