@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :routes
 
   resources :recycling_way_images
-  get 'images_by_recycling_way/:recycling_way_id' => 'recycling_way_images#by_recycling_way'
+  #get 'images_by_recycling_way/:recycling_way_id' => 'recycling_way_images#by_recycling_way'
 
   resources :recycling_ways
   get 'recycling_ways_by_subcategory/:subcategory_id' => 'recycling_ways#by_subcategory'

@@ -4,7 +4,7 @@ class SubcategoriesController < ApplicationController
   # GET /subcategories
   # GET /subcategories.json
   def index
-    @subcategories = Subcategory.all
+    @subcategories = Subcategory.all.order(:id)
   end
 
   # GET /subcategories/1

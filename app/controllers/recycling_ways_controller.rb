@@ -4,7 +4,7 @@ class RecyclingWaysController < ApplicationController
   # GET /recycling_ways
   # GET /recycling_ways.json
   def index
-    @recycling_ways = RecyclingWay.all
+    @recycling_ways = RecyclingWay.all.order(:id)
   end
 
   # GET /recycling_ways/1
@@ -63,9 +63,9 @@ class RecyclingWaysController < ApplicationController
   
   
   def by_subcategory
-    @ways = RecyclingWay.where(subcategory_id: params[:subcategory_id])
+    @recycling_ways = RecyclingWay.where(subcategory_id: params[:subcategory_id]).order(:id)
     respond_to do |format|
-      format.json { render json:@ways }
+      format.json { render json:@recycling_ways }
     end
   end
 
