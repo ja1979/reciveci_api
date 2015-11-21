@@ -1,3 +1,5 @@
+include Utils
+
 class RatesController < ApplicationController
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
 
@@ -58,6 +60,28 @@ class RatesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to rates_url, notice: 'Rate was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  
+  # GET /rates/last.json
+  def last
+    @rates = Rate.order(created_at: :desc).limit(10)
+    url_prefix = serverUrl(request)
+    @result = Array.new
+
+    @rates.each do |rate|
+      @result << {
+        id: rate.id,
+        title: rate.title,
+        content: rate.description,
+        image_url: rate.image_url ? url_prefix + rate.image_url : nil,
+        created_at: rate.created_at
+        }
+    end
+    
+    respond_to do |format|
+      format.json { render json: @result }
     end
   end
 
