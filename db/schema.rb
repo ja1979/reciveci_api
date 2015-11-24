@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20151116214052) do
     t.datetime "updated_at"
   end
 
+ActiveRecord::Schema.define(version: 20151028224023) do
+
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -63,22 +65,11 @@ ActiveRecord::Schema.define(version: 20151116214052) do
     t.string   "image_name"
   end
 
-  add_index "recycling_ways", ["subcategory_id"], name: "index_recycling_ways_on_subcategory_id"
-
-  create_table "routes", force: true do |t|
-    t.string   "name",            null: false
-    t.string   "schedule",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "waste_picker_id"
-    t.string   "color",           null: false
-  end
-
-  add_index "routes", ["waste_picker_id"], name: "index_routes_on_waste_picker_id"
-
   create_table "subcategories", force: true do |t|
     t.string   "name"
     t.text     "description", limit: 255
+    t.string   "description"
+    t.string   "string"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -87,16 +78,13 @@ ActiveRecord::Schema.define(version: 20151116214052) do
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "waste_pickers", force: true do |t|
-    t.string   "name",           null: false
+    t.string   "name"
     t.date     "birth_date"
     t.date     "start_date"
     t.text     "background"
     t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "affiliation_id"
   end
-
-  add_index "waste_pickers", ["affiliation_id"], name: "index_waste_pickers_on_affiliation_id"
 
 end

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :rates
+  get 'rates_last' => 'rates#last'
+
   resources :affiliations
 
   resources :line_strings
