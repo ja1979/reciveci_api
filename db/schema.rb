@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116174140) do
+ActiveRecord::Schema.define(version: 20151116214052) do
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151116174140) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_name"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20151116174140) do
 
   create_table "recycling_ways", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description",    limit: 255
     t.integer  "subcategory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20151116174140) do
 
   create_table "subcategories", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description", limit: 255
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"

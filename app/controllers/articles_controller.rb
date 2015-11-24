@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   def last
     @articles = Article.order('created_at DESC').limit(10)
 
-    #sleep(2)
+    #sleep(1)
 
 
     #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
