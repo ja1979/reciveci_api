@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116214052) do
+ActiveRecord::Schema.define(version: 20160206203925) do
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-ActiveRecord::Schema.define(version: 20151028224023) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -34,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151028224023) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_name"
+    t.integer  "column"
   end
 
   create_table "line_strings", force: true do |t|
@@ -45,6 +44,14 @@ ActiveRecord::Schema.define(version: 20151028224023) do
   end
 
   add_index "line_strings", ["route_id"], name: "index_line_strings_on_route_id"
+
+  create_table "rates", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "recycling_way_images", force: true do |t|
     t.string   "title"
@@ -65,11 +72,22 @@ ActiveRecord::Schema.define(version: 20151028224023) do
     t.string   "image_name"
   end
 
+  add_index "recycling_ways", ["subcategory_id"], name: "index_recycling_ways_on_subcategory_id"
+
+  create_table "routes", force: true do |t|
+    t.string   "name",            null: false
+    t.string   "schedule",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "waste_picker_id"
+    t.string   "color",           null: false
+  end
+
+  add_index "routes", ["waste_picker_id"], name: "index_routes_on_waste_picker_id"
+
   create_table "subcategories", force: true do |t|
     t.string   "name"
     t.text     "description", limit: 255
-    t.string   "description"
-    t.string   "string"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -78,13 +96,16 @@ ActiveRecord::Schema.define(version: 20151028224023) do
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "waste_pickers", force: true do |t|
-    t.string   "name"
+    t.string   "name",           null: false
     t.date     "birth_date"
     t.date     "start_date"
     t.text     "background"
     t.string   "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "affiliation_id"
   end
+
+  add_index "waste_pickers", ["affiliation_id"], name: "index_waste_pickers_on_affiliation_id"
 
 end

@@ -7,6 +7,31 @@ class CategoriesController < ApplicationController
     @categories = Category.all.order(:id)
   end
 
+  def by_column
+    @categories = Category.where(column: params[:column]).order(:id)
+
+
+    url_prefix = serverUrl(request)
+
+    @result = Array.new
+
+    @categories.each do |category|
+      @result << {
+        id: category.id,
+        name: category.name,
+        description: category.description,
+        image_url: category.image_url ? url_prefix + category.image_url : nil
+        }
+    end
+
+    respond_to do |format|
+      format.json { render json: @result }
+    end
+  end
+
+
+
+
   # GET /categories/1
   # GET /categories/1.json
   def show
@@ -69,6 +94,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :description)
+      params.require(:category).permit(:name, :description, :column)
     end
 end

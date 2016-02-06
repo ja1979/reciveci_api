@@ -64,9 +64,25 @@ class RecyclingWaysController < ApplicationController
   
   def by_subcategory
     @recycling_ways = RecyclingWay.where(subcategory_id: params[:subcategory_id]).order(:id)
-    respond_to do |format|
-      format.json { render json:@recycling_ways }
+
+
+    url_prefix = serverUrl(request)
+
+    @result = Array.new
+
+    @recycling_ways.each do |recycling_way|
+      @result << {
+        id: recycling_way.id,
+        title: recycling_way.title,
+        description: recycling_way.description,
+        image_url: recycling_way.image_url ? url_prefix + recycling_way.image_url : nil
+        }
     end
+
+    respond_to do |format|
+      format.json { render json: @result }
+    end
+
   end
 
   private

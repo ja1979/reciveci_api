@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :rates
+  
   get 'rates_last' => 'rates#last'
 
   resources :affiliations
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   get 'subcategories_by_category/:category_id' => 'subcategories#by_category'
 
   resources :categories
+  get 'categories_by_column/:column' => 'categories#by_column'
 
   resources :waste_pickers
 
