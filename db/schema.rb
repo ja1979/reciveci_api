@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206203925) do
+ActiveRecord::Schema.define(version: 20160303015938) do
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
@@ -33,7 +33,18 @@ ActiveRecord::Schema.define(version: 20160206203925) do
     t.datetime "updated_at"
     t.string   "image_name"
     t.integer  "column"
+    t.string   "waste_type"
   end
+
+  create_table "examples", force: true do |t|
+    t.string   "name",                          null: false
+    t.boolean  "enabled",        default: true, null: false
+    t.integer  "subcategory_id",                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "examples", ["subcategory_id"], name: "index_examples_on_subcategory_id"
 
   create_table "line_strings", force: true do |t|
     t.string   "name",                    null: false
@@ -87,10 +98,13 @@ ActiveRecord::Schema.define(version: 20160206203925) do
 
   create_table "subcategories", force: true do |t|
     t.string   "name"
-    t.text     "description", limit: 255
+    t.text     "description",  limit: 255
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_name"
+    t.text     "examples"
+    t.text     "instructions"
   end
 
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"

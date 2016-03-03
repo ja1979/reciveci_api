@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @example.name %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @example.enabled %>
+</p>
+
+<p>
+  <strong>Subcategory:</strong>
+  <%= @example.subcategory.name %>
+</p>
+
+<%= link_to 'Edit', edit_example_path(@example) %> |
+<%= link_to 'Back', examples_path %>

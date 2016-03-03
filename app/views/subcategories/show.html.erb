@@ -11,8 +11,23 @@
 </p>
 
 <p>
+  <strong>Image name:</strong>
+  <%= @subcategory.image_name %>
+</p>
+
+<p>
   <strong>Category:</strong>
   <%= @subcategory.category.name %>
+</p>
+
+<p>
+  <strong>Examples:</strong>
+  <%= @subcategory.examples %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @subcategory.instructions %>
 </p>
 
 <%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |

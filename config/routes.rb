@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :examples
+
   resources :rates
-  
+
   get 'rates_last' => 'rates#last'
 
   resources :affiliations
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
   get 'recycling_ways_by_subcategory/:subcategory_id' => 'recycling_ways#by_subcategory'
 
   resources :subcategories
-  
+
   get 'subcategories_by_category/:category_id' => 'subcategories#by_category'
 
   resources :categories
@@ -33,6 +35,8 @@ Rails.application.routes.draw do
   get 'articles_last' => 'articles#last'
 
   get 'map/routes'
+
+  get 'separate' => 'separate#complete'
 
 
 

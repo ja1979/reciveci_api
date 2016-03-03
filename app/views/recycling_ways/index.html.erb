@@ -15,7 +15,7 @@
       <tr>
         <td><%= recycling_way.title %></td>
         <td><%= recycling_way.description %></td>
-        <td><%= recycling_way.subcategory.name %></td>
+        <td><%= recycling_way.subcategory ? recycling_way.subcategory.name : nil %></td>
         <td><%= link_to 'Show', recycling_way %></td>
         <td><%= link_to 'Edit', edit_recycling_way_path(recycling_way) %></td>
         <td><%= link_to 'Destroy', recycling_way, method: :delete, data: { confirm: 'Are you sure?' } %></td>

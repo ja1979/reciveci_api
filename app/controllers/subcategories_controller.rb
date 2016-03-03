@@ -60,8 +60,8 @@ class SubcategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  
+
+
   def by_category
     @subcategories = Subcategory.where(category_id: params[:category_id])
     respond_to do |format|
@@ -77,6 +77,6 @@ class SubcategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subcategory_params
-      params.require(:subcategory).permit(:name, :description, :category_id)
+      params.require(:subcategory).permit(:name, :description, :image_name, :category_id, :examples, :instructions)
     end
 end

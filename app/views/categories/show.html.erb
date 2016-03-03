@@ -4,14 +4,21 @@
   <strong>Name:</strong>
   <%= @category.name %>
 </p>
-
 <p>
   <strong>Description:</strong>
   <%= @category.description %>
 </p>
 <p>
+  <strong>Image name:</strong>
+  <%= @category.image_name %>
+</p>
+<p>
   <strong>Column:</strong>
   <%= @category.column %>
+</p>
+<p>
+  <strong>Waste type:</strong>
+  <%= @category.waste_type %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
