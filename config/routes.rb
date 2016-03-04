@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   resources :line_strings
 
-  get 'map/routes'
-
   resources :routes
 
   resources :recycling_way_images

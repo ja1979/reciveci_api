@@ -1,3 +1,5 @@
+include Utils
+
 class SeparateController < ApplicationController
 
   def getSubcategories(category_id, url_prefix)
