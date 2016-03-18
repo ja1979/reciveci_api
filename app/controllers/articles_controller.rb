@@ -18,7 +18,6 @@ class ArticlesController < ApplicationController
 
     #sleep(1)
 
-
     #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
     url_prefix = serverUrl(request)
 
@@ -34,6 +33,29 @@ class ArticlesController < ApplicationController
         created_at: article.created_at
         }
     end
+
+    respond_to do |format|
+      format.json { render json: @result }
+    end
+  end
+
+  # GET /articles/last.json
+  def count
+
+
+
+    if params[:date].present?
+      # puts params[:date]
+      date = params[:date].to_time + 1
+      @count = Article.where("created_at > ?",date).order('created_at DESC').limit(10).count
+    else
+      @count = Article.order('created_at DESC').limit(10).count
+    end
+
+    @result = {
+      count: @count,
+      # date: params[:date]
+    }
 
     respond_to do |format|
       format.json { render json: @result }

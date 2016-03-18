@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   #resources :articles, :defaults => { :format => :json }
 
   get 'articles_last' => 'articles#last'
+  get 'articles_count' => 'articles#count'
 
   get 'map/routes'
 
