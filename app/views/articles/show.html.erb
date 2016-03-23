@@ -1,13 +1,24 @@
-<p id="notice"><%= notice %></p>
-<p>
+<p id="notice" class="alert alert-success"><%= notice %></p>
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+	<p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
  
-<p>
+</div>
+<div class="panel-body">
+	<p>
   <strong>Content:</strong>
   <%= @article.content %>
 </p>
 
+</div>
+	
+</div>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+

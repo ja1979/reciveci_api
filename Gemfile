@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '4.1.4'
 
 ### OpenShift Online changes:
@@ -20,11 +19,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest'
   gem 'thor'
-end
-
-# Add support for the MySQL
-group :production, :mysql do
-  gem 'mysql2'
 end
 
 group :production, :postgresql do
@@ -66,3 +60,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'bootstrap-datepicker-rails'
