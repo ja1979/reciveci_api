@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '4.1.4'
 
 ### OpenShift Online changes:
@@ -22,7 +21,10 @@ group :development, :test do
   gem 'thor'
 end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d384698e5bd60785ae223b7723cecc29f8e24882
 group :production, :postgresql do
   gem 'pg'
 end
@@ -62,3 +64,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'bootstrap-datepicker-rails'
