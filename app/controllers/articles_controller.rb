@@ -41,9 +41,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/last.json
   def count
-
-
-
     if params[:date].present?
       # puts params[:date]
       date = params[:date].to_time + 1

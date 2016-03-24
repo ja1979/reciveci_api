@@ -23,9 +23,9 @@ group :development, :test do
 end
 
 # Add support for the MySQL
-group :production, :mysql do
-  gem 'mysql2'
-end
+#group :production, :mysql do
+#  gem 'mysql2'
+#end
 
 group :production, :postgresql do
   gem 'pg'
