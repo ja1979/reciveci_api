@@ -9,9 +9,14 @@
  
 </div>
 <div class="panel-body">
-	<p>
+<p>
   <strong>Content:</strong>
   <%= @article.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @article.image_path %>
 </p>
 
 </div>
