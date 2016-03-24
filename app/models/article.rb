@@ -34,7 +34,7 @@ class Article < ActiveRecord::Base
 	end
 
 	def image_path
-		"/articles/#{id}.#{extension}"
+		"/assets/images/articles/#{id}.#{extension}"
 	end
 
 	
