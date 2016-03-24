@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require_tree .
+
+//funcion para crear el date picker en waste_pickers
+ $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker();
+  })

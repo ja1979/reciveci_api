@@ -1,4 +1,4 @@
-<h1>Editing article</h1>
+<h1 class="text-center">Editing article</h1>
  
 <%= form_for :article, url: article_path(@article), method: :patch do |f| %>
  
@@ -16,21 +16,21 @@
     </div>
   <% end %>
  
-  <p>
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+    <%= f.text_field :title,:class=>'form-control' %>
+  </div>
  
-  <p>
+  <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </p>
+    <%= f.text_area :content,:class=>'form-control' %>
+  </div>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit nil,:class=>'btn btn-primary'%>
   </p>
  
 <% end %>
- 
+ <br>
 <%= link_to 'Show', @article %> |
 <%= link_to 'Back', articles_path %>
