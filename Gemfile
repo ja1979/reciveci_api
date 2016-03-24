@@ -21,10 +21,7 @@ group :development, :test do
   gem 'thor'
 end
 
-<<<<<<< HEAD
 
-=======
->>>>>>> d384698e5bd60785ae223b7723cecc29f8e24882
 group :production, :postgresql do
   gem 'pg'
 end

@@ -20,13 +20,13 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.content %></td>
-<<<<<<< HEAD
+
       <td><%= image_tag article.image_path %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-=======
-      <td><%= link_to article_path(article) do%>
+      <td><%= link_to 'Destroy', article_path(article)%></td>
+
+      <td> <%= link_to article_path(article) do %></td>
 
 
    <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="mostrar"></span>
@@ -37,7 +37,7 @@
 <% end %>
       </td>
       <td><%= link_to  article_path(article),
->>>>>>> d384698e5bd60785ae223b7723cecc29f8e24882
+
               method: :delete,
               data: { confirm: 'Are you sure?' } do%>
 <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>

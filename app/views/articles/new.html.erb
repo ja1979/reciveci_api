@@ -1,35 +1,28 @@
-<<<<<<< HEAD
-<%= form_for :article, url: articles_path  do |f| %>
-  <p>
-=======
+
 <br>
 <%= form_for :article, url: articles_path do |f| %>
   <div class="form-group  ">
->>>>>>> d384698e5bd60785ae223b7723cecc29f8e24882
     <%= f.label :title %><br>
     <%= f.text_field :title ,:class=>'form-control'%>
   </div>
  
  <div class="form-group">
     <%= f.label :content %><br>
-<<<<<<< HEAD
-    <%= f.text_area :content %>
-  </p>
 
-  <p>
+    <%= f.text_area :content,:class=>'form-control' %>
+  
+  </div>
+
+  <div class="form-group">
   <%= f.label :image %><br>
   <%= f.file_field :image  %>
-  </p> 
-
-=======
-    <%= f.text_area :content ,:class=>'form-control'%>
   </div>
- 
->>>>>>> d384698e5bd60785ae223b7723cecc29f8e24882
-  <p>
+
+ <p>
     <%= f.submit nil,:class=>'btn btn-primary'%>
   </p>
-<% end %>
+<%end%>
+
 <br>
 <%= link_to articles_path do%>
 <span class="glyphicon glyphicon-arrow-left no-hover" ></span>
