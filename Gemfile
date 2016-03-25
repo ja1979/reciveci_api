@@ -21,6 +21,7 @@ group :development, :test do
   gem 'thor'
 end
 
+
 # Add support for the MySQL
 #group :production, :mysql do
 #  gem 'mysql2'
@@ -31,6 +32,8 @@ group :production, :postgresql do
 end
 
 ### / OpenShift changes
+#uso de la gema Device para autenticacion de usuarios
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
