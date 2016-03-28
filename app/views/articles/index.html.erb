@@ -19,14 +19,10 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.content %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article)%></td>
+      
 
-      <td> <%= link_to article_path(article) do %></td>
-
-
-   <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="mostrar"></span>
+      <td> <%= link_to article_path(article) do %>
+<span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="mostrar"></span>
 <% end %>
       </td>
       <td><%= link_to  edit_article_path(article) do%>
