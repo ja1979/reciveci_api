@@ -11,14 +11,21 @@
 <div class="panel-body">
 	<p>
   <strong><%=t('articles.content')%>:</strong>
+<p>
+  <strong>Content:</strong>
   <%= @article.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @article.image_path %>
 </p>
 
 </div>
 	
 </div>
 
-<%= link_to t('articles.edit'), edit_article_path(@article) %> |
-<%= link_to t('articles.back'), articles_path %>
+<%= link_to t('general.edit'), edit_article_path(@article) %> |
+<%= link_to t('general.back'), articles_path %>
 
 

@@ -25,12 +25,17 @@
     <%=t('articles.content') %><br>
     <%= f.text_area :content,:class=>'form-control' %>
   </div>
+
+   <div class="form-group">
+  <%=t('articles.img') %><br>
+  <%= f.file_field :image ,:value=>"here"%>
+  </div>
  
   <p>
-    <%= f.submit t('articles.btn_save'),:class=>'btn btn-primary'%>
+    <%= f.submit t('general.btn_save'),:class=>'btn btn-primary'%>
   </p>
  
 <% end %>
  <br>
-<%= link_to t('articles.show'), @article %> |
-<%= link_to t('articles.back'), articles_path %>
+<%= link_to t('general.show'), @article %> |
+<%= link_to t('general.back'), articles_path %>

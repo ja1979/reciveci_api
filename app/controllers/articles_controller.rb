@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
         id: article.id,
         title: article.title,
         content: article.content,
-        image_url: article.image_url ? url_prefix + article.image_url : nil,
+        image: article.image_url ? url_prefix + article.image_url : nil,
         created_at: article.created_at
         }
     end
@@ -41,9 +41,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/last.json
   def count
-
-
-
     if params[:date].present?
       # puts params[:date]
       date = params[:date].to_time + 1
@@ -140,6 +137,6 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       #params[:article]
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content , :image, :extension)
     end
 end

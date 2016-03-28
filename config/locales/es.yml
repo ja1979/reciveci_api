@@ -37,6 +37,7 @@ es:
       edit_article: "Editar Articulo"
       
       mensaje: "Articulo actualizado exitosamente."
+      img: "Imagen"
 
   affiliations:
     name: "Nombre"

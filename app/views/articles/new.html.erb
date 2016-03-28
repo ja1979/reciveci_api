@@ -1,3 +1,4 @@
+
 <br>
 <%= form_for :article, url: articles_path do |f| %>
   <div class="form-group  ">
@@ -7,13 +8,21 @@
  
  <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_area :content ,:class=>'form-control'%>
+
+    <%= f.text_area :content,:class=>'form-control' %>
+  
   </div>
- 
-  <p>
+
+  <div class="form-group">
+  <%= f.label :image %><br>
+  <%= f.file_field :image  %>
+  </div>
+
+ <p>
     <%= f.submit nil,:class=>'btn btn-primary'%>
   </p>
-<% end %>
+<%end%>
+
 <br>
 <%= link_to articles_path do%>
 <span class="glyphicon glyphicon-arrow-left no-hover" ></span>
