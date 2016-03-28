@@ -38,6 +38,7 @@ es:
       
       mensaje_c: "Articulo creado exitosamente."
       mensaje_u: "Articulo actualizado exitosamente."
+      mensaje_d: "Articulo borrado exitosamente."
       img: "Imagen"
 
 
@@ -48,4 +49,25 @@ es:
     btn_create: "Crear Asociacion"
     mensaje_c: "Asociacion exitosamente creada."
     mensaje_u: "Asociacion exitosamente actualizada."
+
+  login:
+    title: "Iniciar Sesion"
+    email: "Correo"
+    password: "Contraseña"
+    remember: "Recuerdame"
+    sign_in: "iniciar Sesion"
+    sign_up: "Registrarme"
+    forgot: "Olvido su Contraseña?"
+    log_out: "Cerrar Sesion"
+    no_you: " No , Eres tu"
+    welcome: "Bienvenido  "
+    user: "Nombre de Usuario"
+    pd_confirm: "Vuleva a escribir su contraseña" 
+    caracter: "caracteres minimos"
+    instructions: "enviar instrucciones"
+
+
+
+
+
 

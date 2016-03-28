@@ -42,6 +42,7 @@ en:
       
       mensaje_u: "Article was successfully updated."
       mensaje_c: "Article was successfully created."
+      mensaje_d: "Article was successfully destroyed."
 
   affiliations:
     name: "Name"
@@ -50,3 +51,18 @@ en:
     btn_create: "Create Affiliation"
     mensaje_c: "Affiliation was successfully created."
     mensaje_u: "Affiliation was successfully update."
+  login:
+    title: "Login"
+    email: "E-mail"
+    password: "Password"
+    remember: "Remember me"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    forgot: "Forgot Password?"
+    log_out: "Log Out"
+    no_you: " Not, Are you"
+    welcome: "Welcome  "
+    user: "Username"
+    pd_confirm: "Retype password"
+    caracter: "characters minimun"
+    instructions: "send instructions"

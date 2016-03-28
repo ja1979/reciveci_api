@@ -8,16 +8,16 @@
 </head>
 <body>
 <div class="container">
-	<p class="notice"><%= notice %></p>
+	<p id="notice" class="alert alert-success"><%=notice%></p>
     <p class="alert"><%= alert %></p>
 
     <div id="user_nav">
     	<% if user_signed_in? %>
-    	Bienvenido <%= current_user.email %> ¿No eres tú?
-    	<%= link_to "Cerrar Sesión", destroy_user_session_path %>
+    	<%=t('login.welcome')%><%= current_user.email %><%=t('login.no_you')%>
+    	<%= link_to t('login.log_out'), destroy_user_session_path %>
     	<% else %>
-    	<%= link_to "Registrarse", new_user_registration_path %> o
-    	<%= link_to "Iniciar Sesión", new_user_session_path %>
+    	<%= link_to t('login.sign_up'), new_user_registration_path %> o
+    	<%= link_to t('login.sign_in'), new_user_session_path %>
     	<% end %>	
     </div>
 <%= yield %>
