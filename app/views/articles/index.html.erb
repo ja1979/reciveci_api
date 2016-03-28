@@ -1,17 +1,17 @@
-<h1 class="text-center">Listing Articles</h1>
+<h1 class="text-center"><%=t('articles.title')%></h1>
 <div class="container">
 <div class="col-md-2 col-md-offset-6 col-sm-offset-6">
 <%= link_to new_article_path do %>
 
-   <span class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo articulo"></span>
+   <span class="glyphicon glyphicon-file " data-toggle="tooltip" title=<%=t('articles.new')%>></span>
 <% end %>
 </div>
 </div>
 <br>
 <table class="table table-hover">
   <tr>
-    <th>Title</th>
-    <th>Content</th>
+    <th><%=t('articles.wtitle')%></th>
+    <th><%=t('articles.content')%></th>
     <th colspan="3"></th>
   </tr>
  
@@ -22,17 +22,17 @@
       <td><%= link_to article_path(article) do%>
 
 
-   <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="mostrar"></span>
+   <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title=<%=t('articles.show')%>></span>
 <% end %>
       </td>
       <td><%= link_to  edit_article_path(article) do%>
- <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+ <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title=<%=t('articles.edit')%>></span>
 <% end %>
       </td>
       <td><%= link_to  article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } do%>
-<span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+              data: { confirm: t('articles.confirm')} do%>
+<span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title=<%=t('articles.remove')%>></span>
 <% end %>
               </td>
     </tr>

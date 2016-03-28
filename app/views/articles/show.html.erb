@@ -1,16 +1,16 @@
-<p id="notice" class="alert alert-success"><%= notice %></p>
+<p id="notice" class="alert alert-success"><%=t('articles.mensaje') %></p>
 
 <div class="panel panel-primary">
 <div class="panel-heading">
 	<p>
-  <strong>Title:</strong>
+  <strong><%=t('articles.wtitle')%>:</strong>
   <%= @article.title %>
 </p>
  
 </div>
 <div class="panel-body">
 	<p>
-  <strong>Content:</strong>
+  <strong><%=t('articles.content')%>:</strong>
   <%= @article.content %>
 </p>
 
@@ -18,7 +18,7 @@
 	
 </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to t('articles.edit'), edit_article_path(@article) %> |
+<%= link_to t('articles.back'), articles_path %>
 
 

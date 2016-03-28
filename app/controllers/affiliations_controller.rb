@@ -20,6 +20,7 @@ class AffiliationsController < ApplicationController
   # GET /affiliations/1/edit
   def edit
   end
+  
 
   # POST /affiliations
   # POST /affiliations.json
@@ -28,7 +29,7 @@ class AffiliationsController < ApplicationController
 
     respond_to do |format|
       if @affiliation.save
-        format.html { redirect_to @affiliation, notice: 'Affiliation was successfully created.' }
+        format.html { redirect_to @affiliation, notice: t('affiliations.mensaje_c') }
         format.json { render :show, status: :created, location: @affiliation }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class AffiliationsController < ApplicationController
   def update
     respond_to do |format|
       if @affiliation.update(affiliation_params)
-        format.html { redirect_to @affiliation, notice: 'Affiliation was successfully updated.' }
+        format.html { redirect_to @affiliation, notice: t('affiliations.mensaje_u') }
         format.json { render :show, status: :ok, location: @affiliation }
       else
         format.html { render :edit }

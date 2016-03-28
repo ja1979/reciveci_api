@@ -24,11 +24,13 @@
   <div class="form-group">
     <%= f.label :birth_date %><br>
     
-    <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker',:class=>'form-control' %>
+    <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker',:class=>'form-control ' %>
   </div>
   <div class="form-group">
     <%= f.label :start_date %><br>
-    <%= f.text_field :start_date, 'data-behaviour' => 'datepicker',:class=>'form-control' %>
+    <%= f.text_field :start_date, 'data-behaviour' => 'datepicker',:class=>'form-control ' %>
+    
+
   </div>
   <div class="form-group">
     <%= f.label :background %><br>
@@ -41,4 +43,7 @@
   <div class="actions">
     <%= f.submit nil,:class=>'btn btn-primary'%>
   </div>
+ 
+
+
 <% end %>

@@ -11,11 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%=t('affiliations.name')%><br>
+    <%= f.text_field :name ,:class=>'form-control'%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('affiliations.btn_create'),:class=>'btn btn-primary'%>
   </div>
 <% end %>

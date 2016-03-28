@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+scope "(:locale)", locale:  /es|en/ do
   resources :examples
 
   resources :rates
+  resources :articles
+   get 'articles_last' => 'articles#last'
+  get 'articles_count' => 'articles#count'
+
 
   get 'rates_last' => 'rates#last'
 
@@ -27,16 +32,15 @@ Rails.application.routes.draw do
 
   resources :waste_pickers
 
-  resources :articles
+  
   #resources :articles, :defaults => { :format => :json }
 
-  get 'articles_last' => 'articles#last'
-  get 'articles_count' => 'articles#count'
+ 
 
   get 'map/routes'
 
   get 'separate' => 'separate#complete'
 
-
-
+end
+  
 end

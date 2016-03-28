@@ -19,31 +19,30 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+es:
   general:
-      new: "New"
-      show: "Show"
-      edit: "Edit"
-      back: "Back"
-      remove: "remove"
-      confirm: "Are you sure?"
-      btn_save: "Save"
-
+      new: "Nuevo"
+      show: "Mostrar"
+      edit: "Editar"
+      remove: "eliminar"
+      back: "Atras"
+      confirm: "Esta seguro?"
+      btn_save: "Guardar"
 
   articles:
-      title: "Listing Articles" 
-      wtitle: "Title"
-      content: "Content"
+      title: "Listado de  Articulos" 
+      wtitle: "Titulo"
+      content: "Contenido"
       
+      edit_article: "Editar Articulo"
       
-      
-      edit_article: "Editing Article"
-      
-      mensaje: "Article was successfully updated."
+      mensaje: "Articulo actualizado exitosamente."
+
   affiliations:
-    name: "Name"
-    title: "Listing Affilliations"
-    new_aff: "New Affilliation"
-    btn_create: "Create Affiliation"
-    mensaje_c: "Affiliation was successfully created."
-    mensaje_u: "Affiliation was successfully update."
+    name: "Nombre"
+    title: "Listado de Asociaciones"
+    new_aff: "Nueva Asociacion"
+    btn_create: "Crear Asociacion"
+    mensaje_c: "Asociacion exitosamente creada."
+    mensaje_u: "Asociacion exitosamente actualizada."
+
