@@ -1,7 +1,15 @@
-<p id="notice" class="alert alert-success"><%=t('articles.mensaje') %></p>
-
+<p id="notice"><%=notice%></p>
+<div class="container">
+<div class="col-md-offset-4">
+<p>
+  <strong><%=t('articles.img')%></strong>
+  <%= image_tag @article.image_path %>
+</p>
+</div>
+</div>
 <div class="panel panel-primary">
 <div class="panel-heading">
+
 	<p>
   <strong><%=t('articles.wtitle')%>:</strong>
   <%= @article.title %>
@@ -11,15 +19,11 @@
 <div class="panel-body">
 	<p>
   <strong><%=t('articles.content')%>:</strong>
-<p>
-  <strong>Content:</strong>
+
   <%= @article.content %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @article.image_path %>
-</p>
+
 
 </div>
 	

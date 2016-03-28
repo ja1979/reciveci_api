@@ -10,14 +10,14 @@ class Article < ActiveRecord::Base
 
 
 
-	# def image_url
+	def image_url
 
-	# 	current_path = Dir.pwd		
-	# 	base_path = current_path + "/public/"
-	# 	image_path = "assets/images/articles/#{id}.jpg"
+		current_path = Dir.pwd
+		base_path = current_path + "/public/"
+		image_path = "assets/images/articles/#{id}.jpg"
 
-	# 	image_path if File.exist?(base_path + image_path)
-	# end
+		image_path if File.exist?(base_path + image_path)
+	end
 
 	after_save:guardar_imagen
 
@@ -25,7 +25,7 @@ class Article < ActiveRecord::Base
 		unless file_data.blank?
 			@file_data= file_data
 			self.extension= file_data.original_filename.split('.').last.downcase
-			
+
 		end
 	end
 
@@ -37,7 +37,7 @@ class Article < ActiveRecord::Base
 		"/assets/images/articles/#{id}.#{extension}"
 	end
 
-	
+
 	private
 
 	def guardar_imagen
@@ -49,6 +49,6 @@ class Article < ActiveRecord::Base
 		@file_data=nil
 	end
 
- 	end 
+ 	end
 
 end
