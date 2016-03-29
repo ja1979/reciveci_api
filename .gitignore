@@ -20,3 +20,7 @@
 /config/localdatabase.yml
 
 *.log
+
+# Ignore images in articles
+articles/*.jpg
+articles/*.png
