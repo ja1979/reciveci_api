@@ -7,7 +7,10 @@ class Article < ActiveRecord::Base
 #		super
 #		@image_url ||= "Hola"
 #	end
-
+	
+	validates :title , presence:true 
+	validates :content , presence:true 
+	validates :extension , presence: { message: "Debe subir la imagen"}
 
 
 	def image_url
