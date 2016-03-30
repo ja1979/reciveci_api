@@ -22,5 +22,4 @@
 *.log
 
 # Ignore images in articles
-articles/*.jpg
-articles/*.png
+/public/**/articles/*
