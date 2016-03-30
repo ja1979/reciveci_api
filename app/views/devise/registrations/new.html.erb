@@ -14,6 +14,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :role, "Rol de usuario" %><br />
+    <%= f.collection_select :role, User::Roles, :to_s, :humanize %>
+  </div>
+
+  <div class="field">
     <%= f.label :password , "Contraseña"%>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
