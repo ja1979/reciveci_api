@@ -22,4 +22,4 @@
 *.log
 
 # Ignore images in articles
-/public/**/articles/*
+#/public/**/articles/*
