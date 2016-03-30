@@ -103,6 +103,7 @@ en:
     sessions:
       signed_in: "Ingreso exitoso."
       signed_out: "Usted ha salido del sistema."
+      already_signed_out: "Usted ha salido del sistema."
     unlocks:
       send_instructions: "Recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos."
       send_paranoid_instructions: "Si su cuenta existe, usted recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos."
