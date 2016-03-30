@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
 	
 	validates :title , presence:true 
 	validates :content , presence:true 
-	validates :extension , presence: { message: "Debe subir la imagen"}
+	validates :extension , presence: { message:"Debe subir la imagen"}
 
 
 	def image_url
