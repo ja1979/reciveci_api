@@ -1,6 +1,7 @@
 include Utils
 
 class SeparateController < ApplicationController
+  load_and_authorize_resource
 
   def getSubcategories(category_id, url_prefix)
 

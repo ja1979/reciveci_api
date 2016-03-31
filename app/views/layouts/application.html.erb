@@ -9,7 +9,8 @@
 <body>
 <div class="container">
 	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <p class="alert"><%= alert %></p>
+  <p class="error"><%= flash[:error] %></p>
 
     <div id="user_nav">
     	<% if user_signed_in? %>

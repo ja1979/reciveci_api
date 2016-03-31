@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  Roles = %w[administrador autor publico].freeze         
+  Roles = %w[administrador autor].freeze         
 end

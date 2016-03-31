@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
 scope "(:locale)", locale:  /es|en/ do
+
   devise_for :users
   resources :examples
 
   resources :rates
   resources :articles
-   get 'articles_last' => 'articles#last'
+  get 'articles_last' => 'articles#last'
   get 'articles_count' => 'articles#count'
 
 
@@ -41,6 +42,7 @@ scope "(:locale)", locale:  /es|en/ do
   get 'map/routes'
 
   get 'separate' => 'separate#complete'
+  
 
 end
   

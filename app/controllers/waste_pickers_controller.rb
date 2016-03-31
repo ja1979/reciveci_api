@@ -1,6 +1,7 @@
 class WastePickersController < ApplicationController
   before_action :set_waste_picker, only: [:show, :edit, :update, :destroy]
   before_action :prepare_affiliations, only: [:new, :edit]
+  load_and_authorize_resource
 
 
   # GET /waste_pickers

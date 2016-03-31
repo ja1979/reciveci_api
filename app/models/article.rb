@@ -1,12 +1,11 @@
 class Article < ActiveRecord::Base
-
 	#attr_accessor :image
 	IMAGENES=File.join Rails.root , 'public','assets','images','articles'
 
-#	def initialize(attributes={})
-#		super
-#		@image_url ||= "Hola"
-#	end
+	#	def initialize(attributes={})
+	#		super
+	#		@image_url ||= "Hola"
+	#	end
 	
 	validates :title , presence:true 
 	validates :content , presence:true 
@@ -53,5 +52,4 @@ class Article < ActiveRecord::Base
 	end
 
  	end
-
 end

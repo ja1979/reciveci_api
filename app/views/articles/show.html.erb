@@ -31,8 +31,9 @@
 </div>
 	
 </div>
-
-<%= link_to t('general.edit'), edit_article_path(@article) %> |
+<% if can? :update, @article %>
+	<%= link_to t('general.edit'), edit_article_path(@article) %> |
+<% end %>	
 <%= link_to t('general.back'), articles_path %>
 
 

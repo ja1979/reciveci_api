@@ -2,6 +2,7 @@ include Utils
 
 class RatesController < ApplicationController
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /rates
   # GET /rates.json

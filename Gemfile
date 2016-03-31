@@ -35,6 +35,9 @@ end
 #uso de la gema Device para autenticacion de usuarios
 gem 'devise'
 
+#uso de la gema cancan para autorizacion y asignacion de roles
+gem 'cancan'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

@@ -3,6 +3,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   before_action :prepare_waste_pickers, only: [:new, :edit]
+  load_and_authorize_resource
 
 
   # GET /routes
