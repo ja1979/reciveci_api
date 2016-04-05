@@ -32,7 +32,6 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     params[:user].delete(:password) if params[:user][:password].blank?
     params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
-    #if @user.update_attributes(params[:user])
     if @user.update_attributes(user_params)
       flash[:notice] = "Usuario actualizado exitosamente"
       redirect_to action: "index"
@@ -52,6 +51,5 @@ class UserController < ApplicationController
   def user_params
       #params[:article]
       params.require(:user).permit(:username,:email,:role,:password, :password_confirmation)
-    end
-
+  end
 end

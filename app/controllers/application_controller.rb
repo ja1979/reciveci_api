@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!, if: :devise_controller?
 
+  def after_sign_in_path_for(user)
+    dashboard_path
+  end
+
+  def after_sign_out_path_for(user)
+    login_path
+  end
+
+
   #para solucionar el error de parametros que tiene cancan con rails 4+
   before_filter do
   resource = controller_name.singularize.to_sym

@@ -1,0 +1,48 @@
+<h2>Editar Cuenta<%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="form-group ">
+    <p><%= f.label :username %><br />
+    <%= f.text_field :username %></p>
+  </div>
+
+  <div class="form-group ">
+    <p><%= f.label :email %><br />
+    <%= f.text_field :email %></p>
+  </div>  
+
+  <div class="form-group ">
+    <p><%= f.label :password %> <i>(Dejar en blanco si no quieres cambiarla)</i><br />
+    <%= f.password_field :password %></p>
+  </div>
+
+  <div class="form-group ">
+    <p><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></p>
+  </div>
+
+  <div class="form-group ">
+    <p><%= f.label :current_password %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i><br />
+    <%= f.password_field :current_password %></p>
+  </div>
+  
+
+  <% if can? :manage, User %>
+    <div class="form-group ">
+      <p><%= f.label :role %>: <%= f.collection_select :role, User::Roles, :to_s, :humanize %></p>
+    </div>
+  <% end %>
+  
+  <div class="form-group ">
+    <p><%= f.submit "Actualizar" %></p>
+  </div> 
+<% end %>
+
+<h3>Cancelar mi cuenta</h3>
+
+<p>Decepcionad@? <%= link_to "Cancelar mi Cuenta", registration_path(resource_name), data: {:confirm => "Estas seguro?"}, :method => :delete %>.</p>
+
+<%= link_to "Atras", :back %>
+

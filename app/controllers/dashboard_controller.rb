@@ -3,7 +3,6 @@ class DashboardController < ApplicationController
   
 
   # GET /user
-  # GET /user.json
   def index
     @users = User.order('id DESC')
   end

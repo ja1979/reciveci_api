@@ -5,8 +5,6 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   after_filter :cors_set_access_control_headers
   
-  
-
 
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
