@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 	#attr_accessor :image
 	IMAGENES=File.join Rails.root , 'public','assets','images','articles'
 
+
 	#	def initialize(attributes={})
 	#		super
 	#		@image_url ||= "Hola"
@@ -16,15 +17,17 @@ class Article < ActiveRecord::Base
 	}
 	validates :extension , presence: { message:"Debe subir la imagen"}
 
+	
 
-	# def image_url
 
-	# 	current_path = Dir.pwd
-	# 	base_path = current_path + "/public/"
-	# 	image_path = "assets/images/articles/#{id}.jpg"
+	def image_url
 
-	# 	image_path if File.exist?(base_path + image_path)
-	# end
+	 	current_path = Dir.pwd
+	 	base_path = current_path + "/public/"
+	 	image_path = "assets/images/articles/#{id}.jpg"
+
+	 	image_path if File.exist?(base_path + image_path)
+	 end
 
 	after_save:guardar_imagen
 

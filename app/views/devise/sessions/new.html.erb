@@ -12,12 +12,12 @@
     <%= f.password_field :password, autocomplete: "off" ,:class=>'form-control'%>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+  <!--<% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me,t('login.remember') %>
     </div>
-  <% end -%>
+  <% end -%>-->
 
   <div class="actions">
     <%= f.submit t('login.sign_in'),:class=>"btn btn-primary" %>
@@ -28,4 +28,8 @@
 
 <% end %>
 
+<<<<<<< HEAD
 
+=======
+<!--<%= render "devise/shared/links" %>-->
+>>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892

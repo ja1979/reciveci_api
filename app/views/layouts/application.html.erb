@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <title>Rails4Example</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,8 +23,41 @@
     	<%= link_to t('login.sign_up'), new_user_registration_path %> o
     	<%= link_to t('login.sign_in'), new_user_session_path %>
     	<% end %>	
+=======
+  <head>
+    <title>Rails4Example</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <% if notice %>
+      	<h4 class="notice alert alert-success"><%= notice %></h4>
+      <% end %>
+      <% if alert %>
+        <h4 class="alert alert alert-info"><%= alert %></h4>
+      <% end %>
+      <% if flash %>
+        <h4 class="error"><%= flash[:error] %></h4>
+      <% end %>
+
+      <div id="user_nav">
+      	<% if user_signed_in? %>
+        	<h4>Bienvenido <%= current_user.email %></h4>
+            <% if can? :manage, User %>
+              <%= link_to "Crear Usuario", new_user_path %>
+            <% end %>
+          <%= link_to "Mi Cuenta", edit_user_registration_path %>
+        	<%= link_to "Cerrar Sesión", destroy_user_session_path %>
+      	<% else %>
+      	<%= link_to "Iniciar Sesión", new_user_session_path %>
+      	<% end %>	
+      </div>
+
+      <%= yield %>    
+          
+>>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
     </div>
-<%= yield %>
-</div>
-</body>
+  </body>
 </html>

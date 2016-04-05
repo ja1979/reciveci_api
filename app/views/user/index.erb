@@ -1,0 +1,29 @@
+<% if can? :manage, User %>
+  <table class="table table-hover">
+	  <tr>
+	    <th><%=t('dashboard.username')%></th>
+	    <th><%=t('dashboard.email')%></th>
+	    <th><%=t('dashboard.rol')%></th>
+	    <th colspan="3"></th>
+	  </tr>
+  <% @users.each do |user| %>
+    <tr>    
+    	<td><%= user.username %> </td> 
+    	<td><%= user.email %></td> 
+    	<td><%= user.role %></td> 
+    	<td><%= user.password %></td>    	
+    	<td><%= link_to  edit_user_path(user) do%>
+          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title=<%=t('general.edit')%>></span>
+          <% end %>
+      </td>
+      <td><%= link_to  user, method: :delete,data: { confirm: t('general.confirm')} do%>
+        <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title=<%=t('general.remove')%>>
+        </span>
+        <% end %>
+      </td>      	
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <!-- aqui deberia mostrarse un menu de navegacion para el autor -->
+<% end %>
