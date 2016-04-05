@@ -1,8 +1,7 @@
 include Utils
 
 class MapController < ApplicationController
-  load_and_authorize_resource
-
+  load_and_authorize_resource :except => [:routes]
 
   after_filter :cors_set_access_control_headers
 

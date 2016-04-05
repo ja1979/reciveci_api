@@ -2,7 +2,9 @@ class ApplicationController < ActionController::Base
 	
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, if: :devise_controller?
 
+  
   #para solucionar el error de parametros que tiene cancan con rails 4+
   before_filter do
   resource = controller_name.singularize.to_sym
@@ -37,6 +39,8 @@ class ApplicationController < ActionController::Base
 
   #enviar mensaje para de acceso denegado
   rescue_from CanCan::AccessDenied do |exception|
-     redirect_to 'http://localhost:3000/users/sign_in' ,:flash => { :error => "NO tienes Permisos para realizar esta acción." }
+     #redirect_to dashboard_path ,:flash => { :error => "NO tienes Permisos para realizar esta acción." }
+     redirect_to dashboard_path 
   end
+
 end

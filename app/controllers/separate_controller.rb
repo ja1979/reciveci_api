@@ -1,7 +1,7 @@
 include Utils
 
 class SeparateController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource  :except => [:complete]
 
   def getSubcategories(category_id, url_prefix)
 
@@ -37,7 +37,6 @@ class SeparateController < ApplicationController
 
   end
 
-
   def complete
 
     url_prefix = serverUrl(request)
@@ -64,15 +63,8 @@ class SeparateController < ApplicationController
       categories_col2: resultCatCol2
     }
 
-
-
     respond_to do |format|
       format.json { render json: result }
     end
   end
-
-
-
-
-
 end

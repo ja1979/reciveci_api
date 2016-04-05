@@ -31,7 +31,7 @@ class Ability
 
     user ||= User.new # usuario invitado (no logeado)
      can :manage, :all
-
+     cannot :manage, User
     if user.role == 'administrador'
       can :manage, :all
     else

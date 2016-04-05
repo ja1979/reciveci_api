@@ -1,0 +1,31 @@
+
+<div class="form-group ">
+	<p><%= f.label :username %><br />
+	<%= f.text_field :username %></p>
+</div>
+
+<div class="form-group  ">
+	<p><%= f.label :email %><br />
+	<%= f.text_field :email %></p>
+</div>
+
+<div class="form-group  ">
+	<p><%= f.label :password %><em>(8 caracteres mínimo)</em><br />
+	<%= f.password_field :password %></p>
+</div>
+
+<div class="form-group  ">
+	<p><%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %></p>
+</div>
+
+<div class="form-group  ">
+	<% if can? :manage, User%>
+	<%= f.collection_select :role, User::Roles, :to_s, :humanize %>
+	<% end %>
+</div>
+
+<div class="form-group  ">
+	<p><%= f.submit "Crear/Actualizar" %></p>
+	<%= link_to t('general.back'), :back  %>
+</div>	

@@ -73,4 +73,8 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+<<<<<<< HEAD
 
+=======
+gem 'bootstrap-datepicker-rails'
+>>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
