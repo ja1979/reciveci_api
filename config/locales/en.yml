@@ -50,3 +50,8 @@ en:
     btn_create: "Create Affiliation"
     mensaje_c: "Affiliation was successfully created."
     mensaje_u: "Affiliation was successfully update."
+
+  dashboard:
+    username: "Username" 
+    email: "E-mail"
+    rol: "Role" 

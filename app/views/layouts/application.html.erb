@@ -17,11 +17,26 @@
     	Bienvenido <%= current_user.email %> ¿No eres tú?
     	<%= link_to "Cerrar Sesión", destroy_user_session_path %>
     	<% else %>
-    	<%= link_to "Registrarse", new_user_registration_path %> o
+      <% if can? :manage, User %>
+    	 <%= link_to "Registrar nuevo Usuario", new_user_registration_path %> o
+      <% end %> 
     	<%= link_to "Iniciar Sesión", new_user_session_path %>
     	<% end %>	
     </div>
-<%= yield %>
+    <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <% if user_signed_in? %>
+        <div class="admin">
+          <% if can? :manage, User %>
+            <%= link_to "Add User", new_user_path %>
+          <% end %>
+          <%= link_to "My Account", edit_user_registration_path %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
 </div>
 </body>
 </html>

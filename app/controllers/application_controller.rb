@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	before_action :set_locale
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, if: :devise_controller?
 
   #para solucionar el error de parametros que tiene cancan con rails 4+
   before_filter do
@@ -44,4 +45,5 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
      redirect_to 'http://localhost:3000/users/sign_in' ,:flash => { :error => "NO tienes Permisos para realizar esta acción." }
   end
+
 end

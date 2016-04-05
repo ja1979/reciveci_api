@@ -49,3 +49,9 @@ es:
     mensaje_c: "Asociacion exitosamente creada."
     mensaje_u: "Asociacion exitosamente actualizada."
 
+  dashboard:
+    username: "Nombre de Usuario" 
+    email: "E-mail"
+    rol: "Rol" 
+
+

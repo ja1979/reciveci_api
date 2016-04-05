@@ -1,0 +1,18 @@
+
+<p><%= f.label :username %><br />
+<%= f.text_field :username %></p>
+
+<p><%= f.label :email %><br />
+<%= f.text_field :email %></p>
+
+<p><%= f.label :password %><br />
+<%= f.password_field :password %></p>
+
+<p><%= f.label :password_confirmation %><br />
+<%= f.password_field :password_confirmation %></p>
+
+<% if can? :manage, User%>
+<%= f.collection_select :role, User::Roles, :to_s, :humanize %>
+<% end %>
+
+<p><%= f.submit "Submit" %></p>
