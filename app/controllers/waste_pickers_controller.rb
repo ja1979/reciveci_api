@@ -1,6 +1,9 @@
 class WastePickersController < ApplicationController
   before_action :set_waste_picker, only: [:show, :edit, :update, :destroy]
   before_action :prepare_affiliations, only: [:new, :edit]
+  load_and_authorize_resource
+  
+$affiliations = Affiliation.all
 
 
   # GET /waste_pickers
@@ -30,7 +33,7 @@ class WastePickersController < ApplicationController
 
     respond_to do |format|
       if @waste_picker.save
-        format.html { redirect_to @waste_picker, notice: 'Waste picker was successfully created.' }
+        format.html { redirect_to @waste_picker, notice: 'Reciclador creado exitosamente.' }
         format.json { render :show, status: :created, location: @waste_picker }
       else
         format.html { render :new }
@@ -44,7 +47,7 @@ class WastePickersController < ApplicationController
   def update
     respond_to do |format|
       if @waste_picker.update(waste_picker_params)
-        format.html { redirect_to @waste_picker, notice: 'Waste picker was successfully updated.' }
+        format.html { redirect_to @waste_picker, notice: 'Reciclador actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @waste_picker }
       else
         format.html { render :edit }
@@ -58,7 +61,7 @@ class WastePickersController < ApplicationController
   def destroy
     @waste_picker.destroy
     respond_to do |format|
-      format.html { redirect_to waste_pickers_url, notice: 'Waste picker was successfully destroyed.' }
+      format.html { redirect_to waste_pickers_url, notice: 'Reciclador eliminado exitosamente' }
       format.json { head :no_content }
     end
   end

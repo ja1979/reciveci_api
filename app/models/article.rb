@@ -1,23 +1,30 @@
 class Article < ActiveRecord::Base
-
 	#attr_accessor :image
 	IMAGENES=File.join Rails.root , 'public','assets','images','articles'
 
-#	def initialize(attributes={})
-#		super
-#		@image_url ||= "Hola"
-#	end
+	#	def initialize(attributes={})
+	#		super
+	#		@image_url ||= "Hola"
+	#	end
+	
+	validates :title , presence:{ message:"Debe Poner un titulo"}
+	validates :content , presence:{ message:"Debe Tener contenido"},length:{
+		minimum:20,
+		too_short:"%{count} caracteres es el minimo requerido",
+		maximum:500,
+		too_long:"%{count} caracteres es el maximo permitido",
+	}
+	validates :extension , presence: { message:"Debe subir la imagen"}
 
 
+	# def image_url
 
-	def image_url
+	# 	current_path = Dir.pwd
+	# 	base_path = current_path + "/public/"
+	# 	image_path = "assets/images/articles/#{id}.jpg"
 
-		current_path = Dir.pwd
-		base_path = current_path + "/public/"
-		image_path = "assets/images/articles/#{id}.jpg"
-
-		image_path if File.exist?(base_path + image_path)
-	end
+	# 	image_path if File.exist?(base_path + image_path)
+	# end
 
 	after_save:guardar_imagen
 
@@ -50,5 +57,4 @@ class Article < ActiveRecord::Base
 	end
 
  	end
-
 end

@@ -1,4 +1,16 @@
 class Rate < ActiveRecord::Base
+
+  validates :title ,presence:{message:"Debe ingresar un titulo"},length:{
+    minimum:4,
+    too_short:"El titulo debe contener %{count} caracteres como minimo"
+
+  }
+
+  validates :description ,presence:{message:"Debe ingresar la descripcion"},length:{
+    minimum:25,
+    too_short:"El titulo debe contener %{count} caracteres como minimo"
+
+  }
   
   def image_url
 

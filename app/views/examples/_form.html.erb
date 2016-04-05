@@ -1,29 +1,35 @@
 <%= form_for(@example) do |f| %>
-  <% if @example.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@example.errors.count, "error") %> prohibited this example from being saved:</h2>
-
-      <ul>
-      <% @example.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<% @example.errors.full_messages.each do |message| %>
+<div class="alert alert-danger">
+        * <%= message %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row">
+<div class="col-md-6 ">
+  
+      
+      
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :enabled %><br>
-    <%= f.check_box :enabled %>
+  
+  <div class="form-group">
+    <%= f.label :Subcategoria %><br />
+    <%= f.collection_select(:subcategory_id, $subcategories, :id, :name, {prompt:"Seleccione"} ,{class:"form-control"})%>
   </div>
-  <div class="field">
-    <%= f.label :subcategory %><br />
-    <%= f.collection_select(:subcategory_id, @subcategories, :id, :name, :include_blank => "Please select") %>
+  <div class="form-group">
+    <%= f.label :Habilitado%><br>
+    
+    <%= f.check_box :enabled ,:class=>"check_box"%>
   </div>
+  
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar",:class=>"btn btn-primary"%>
+  </div>
+  </div>
   </div>
 <% end %>

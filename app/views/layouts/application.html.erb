@@ -8,8 +8,11 @@
 </head>
 <body>
 <div class="container">
-	<p id="notice" class="alert alert-success"><%=notice%></p>
-    <p class="alert"><%= alert %></p>
+<br>
+<br>
+	<p id="notice"class='text-center'><%=notice%></p>
+  <p class="alert"><%= alert %></p>
+  <p class="error"><%= flash[:error] %></p>
 
     <div id="user_nav">
     	<% if user_signed_in? %>

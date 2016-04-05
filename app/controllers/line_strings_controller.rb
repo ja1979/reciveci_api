@@ -3,6 +3,7 @@ class LineStringsController < ApplicationController
   before_action :set_line_string, only: [:show, :edit, :update, :destroy]
 
   before_action :prepare_routes, only: [:new, :edit]
+  load_and_authorize_resource
 
 
   # GET /line_strings

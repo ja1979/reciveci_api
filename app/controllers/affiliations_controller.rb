@@ -1,5 +1,6 @@
 class AffiliationsController < ApplicationController
   before_action :set_affiliation, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /affiliations
   # GET /affiliations.json
@@ -29,7 +30,7 @@ class AffiliationsController < ApplicationController
 
     respond_to do |format|
       if @affiliation.save
-        format.html { redirect_to @affiliation, notice: t('affiliations.mensaje_c') }
+        format.html { redirect_to @affiliation, notice: "Asociacion creada exitosamente" }
         format.json { render :show, status: :created, location: @affiliation }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class AffiliationsController < ApplicationController
   def update
     respond_to do |format|
       if @affiliation.update(affiliation_params)
-        format.html { redirect_to @affiliation, notice: t('affiliations.mensaje_u') }
+        format.html { redirect_to @affiliation, notice: "Asociacion actualizada exitosamente"}
         format.json { render :show, status: :ok, location: @affiliation }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class AffiliationsController < ApplicationController
   def destroy
     @affiliation.destroy
     respond_to do |format|
-      format.html { redirect_to affiliations_url, notice: 'Affiliation was successfully destroyed.' }
+      format.html { redirect_to affiliations_url, notice: "Asociacion eliminada exitosamente" }
       format.json { head :no_content }
     end
   end

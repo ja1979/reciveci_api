@@ -1,5 +1,6 @@
 class RecyclingWayImagesController < ApplicationController
   before_action :set_recycling_way_image, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /recycling_way_images
   # GET /recycling_way_images.json

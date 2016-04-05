@@ -1,37 +1,39 @@
 <%= form_for(@category) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<div class="row">
+<div class="col-md-6 ">
 
-      <ul>
+  
       <% @category.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="alert alert-danger">
+       * <%= message %>
+      
+      
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <% end %>
+  
+  <div class="form-group">
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+  <div class="form-group">
+    <%= f.label :Descripcion%><br>
+    <%= f.text_field :description ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :image_name %><br>
-    <%= f.text_field :image_name %>
+  <div class="form-group">
+    <%= f.label :Nombre_Imagen%><br>
+    <%= f.text_field :image_name ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :column %><br>
-    <%= f.text_field :column %>
+  <div class="form-group">
+    <%= f.label :Columna %><br>
+    <%= f.text_field :column ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :waste_type %><br>
-    <%= f.text_field :waste_type %>
+  <div class="form-group">
+    <%= f.label :Tipo_Residuo %><br>
+    <%= f.text_field :waste_type ,:class=>"form-control"%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar",:class=>"btn btn-primary"%>
+  </div>
+  </div>
   </div>
 <% end %>

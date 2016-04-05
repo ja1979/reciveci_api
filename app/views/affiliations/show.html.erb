@@ -1,9 +1,9 @@
-<p id="notice" class="alert alert-success"><%= notice %></p>
+
 
 <p>
-  <strong><%=t('affiliations.name')%>:</strong>
+  <strong>Nombre:</strong>
   <%= @affiliation.name %>
 </p>
 
-<%= link_to t('general.edit'), edit_affiliation_path(@affiliation) %> |
-<%= link_to t('general.back'), affiliations_path %>
+<%= link_to "Editar", edit_affiliation_path(@affiliation) %> |
+<%= link_to "Atras", affiliations_path %>

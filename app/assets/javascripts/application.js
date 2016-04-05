@@ -14,24 +14,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require bootstrap-datepicker
 //= require_tree .
 
+
+
 //funcion para crear el date picker en waste_picker
- $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker({
+ 
 
 
-    	format:'yyyy/mm/dd',
-    	endDate:'2016',
-    	autoclose:true,
-    	clearBtn:true,
-    	orientation:"bottom-right",
-    	showbuttonPanel:true
-
-    }
-
-
-    	);
-  })
-
+  

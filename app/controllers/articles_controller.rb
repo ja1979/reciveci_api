@@ -1,8 +1,11 @@
 include Utils
 
 class ArticlesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   after_filter :cors_set_access_control_headers
+  
+  
 
 
   def cors_set_access_control_headers
@@ -95,7 +98,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: t('articles.mensaje_c') }
+        format.html { redirect_to @article, notice: 'Articulo creado exitosamente' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -109,7 +112,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: t('articles.mensaje_u') }
+        format.html { redirect_to @article, notice: 'Articulo actualizado exitosamente' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -123,7 +126,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: t('articles.mensaje_d') }
+      format.html { redirect_to articles_url, notice: 'Articulo eliminado exitosamente' }
       format.json { head :no_content }
     end
   end

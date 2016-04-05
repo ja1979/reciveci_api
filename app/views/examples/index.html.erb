@@ -1,11 +1,23 @@
-<h1>Listing examples</h1>
+<h1 class="text-center">Lista de Ejemplos</h1>
+<br>
+<div class="row">
+<div class="col-md-offset-6">
+<%= link_to new_example_path do%>
+<span class="glyphicon glyphicon-plus-sign"></span>
+<% end %>
+</div>
+</div>
 
-<table>
+
+
+<br>
+
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Enabled</th>
-      <th>Subcategory</th>
+      <th>Nombre</th>
+      <th>Habilitado</th>
+      <th>Subcategoria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,12 +25,21 @@
   <tbody>
     <% @examples.each do |example| %>
       <tr>
-        <td><%= example.name %></td>
+        <td><%= link_to example.name, example %></td>
         <td><%= example.enabled %></td>
         <td><%= example.subcategory ? example.subcategory.name : nil %></td>
-        <td><%= link_to 'Show', example %></td>
-        <td><%= link_to 'Edit', edit_example_path(example) %></td>
-        <td><%= link_to 'Destroy', example, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+        <td><%= link_to  edit_example_path(example) do%>
+        <span class="glyphicon glyphicon-edit"%></span>
+          <% end %>
+
+        </td>
+        <td><%= link_to example, method: :delete, data: { confirm: '
+          Esta Seguro?' } do%>
+        <span class="glyphicon glyphicon-remove-sign"%></span>
+        <% end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +47,3 @@
 
 <br>
 
-<%= link_to 'New Example', new_example_path %>

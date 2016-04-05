@@ -1,12 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+<div class="panel-heading">
 
 <p>
-  <strong>Title:</strong>
-  <%= @rate.title %>
+<div class="text-center">
+  <strong ><%= @rate.title %></strong>
+  </div>
+  
 </p>
-
+</div>
+<div class="panel-body">
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion:</strong>
   <%= @rate.description %>
 </p>
 
@@ -14,6 +18,9 @@
   <strong>Image name:</strong>
   <%= @rate.image_name %>
 </p>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_rate_path(@rate) %> |
-<%= link_to 'Back', rates_path %>
+
+<%= link_to 'Editar', edit_rate_path(@rate) %> |
+<%= link_to 'Atras', rates_path %>

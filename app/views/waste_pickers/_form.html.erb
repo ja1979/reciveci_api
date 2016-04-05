@@ -1,49 +1,48 @@
 <%= form_for(@waste_picker) do |f| %>
-  <% if @waste_picker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@waste_picker.errors.count, "error") %> prohibited this waste_picker from being saved:</h2>
-
-      <ul>
+  
       <% @waste_picker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <div class="alert alert-danger">
+        *<%= message %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+      
+    
+<div class="row">
+<div class="col-md-6 ">
 
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :required => true,:class=>'form-control' %>
+    <%= f.label :Nombre %><br>
+    <%= f.text_field :name,:class=>'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :affiliation %><br />
+    <%= f.label :Asociacion%><br />
     
-    <%= f.collection_select(:affiliation_id, @affiliations, :id, :name, {prompt:"Please select"},{class:"form-control"})%>
+    <%= f.collection_select(:affiliation_id, $affiliations, :id, :name, {prompt:"Seleccione"},{class:"form-control"})%>
     
   </div>
+
   <div class="form-group">
-    <%= f.label :birth_date %><br>
-    
-    <%= f.text_field :birth_date, 'data-behaviour' => 'datepicker',:class=>'form-control ' %>
-  </div>
+    <%= f.label :Fecha_de_Nacimiento%><br>
+    <%= f.date_field :birth_date, 'data-behaviour' => 'datepicker',:class=>'form-control' ,:autocomplete=> :off%>
+  
   <div class="form-group">
-    <%= f.label :start_date %><br>
-    <%= f.text_field :start_date, 'data-behaviour' => 'datepicker',:class=>'form-control ' %>
+    <%= f.label :Fecha_de_inicio %><br>
+    <%= f.date_field :start_date, 'data-behaviour' => 'datepicker',:class=>'form-control' ,:autocomplete=> :off%>
     
 
-  </div>
+  </div
   <div class="form-group">
-    <%= f.label :background %><br>
+    <%= f.label :Historial %><br>
     <%= f.text_area :background,:class=>'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :message %><br>
+    <%= f.label :Mensaje %><br>
     <%= f.text_field :message ,:class=>'form-control'%>
   </div>
   <div class="actions">
-    <%= f.submit nil,:class=>'btn btn-primary'%>
+    <%= f.submit "Guardar",:class=>'btn btn-primary'%>
   </div>
- 
-
+</div> 
+</div>
 
 <% end %>

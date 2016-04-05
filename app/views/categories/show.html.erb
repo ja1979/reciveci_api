@@ -1,25 +1,24 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @category.name %>
 </p>
 <p>
-  <strong>Description:</strong>
+  <strong>Descripcion</strong>
   <%= @category.description %>
 </p>
 <p>
-  <strong>Image name:</strong>
+  <strong>Nombre_Imagen:</strong>
   <%= @category.image_name %>
 </p>
 <p>
-  <strong>Column:</strong>
+  <strong>Columna:</strong>
   <%= @category.column %>
 </p>
 <p>
-  <strong>Waste type:</strong>
+  <strong>Tipo de Residuo:</strong>
   <%= @category.waste_type %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Editar', edit_category_path(@category) %> |
+<%= link_to 'Atras', categories_path %>

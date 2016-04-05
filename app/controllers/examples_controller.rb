@@ -1,11 +1,15 @@
 class ExamplesController < ApplicationController
+
   before_action :set_example, only: [:show, :edit, :update, :destroy]
   before_action :prepare_subcategories, only: [:new, :edit]
+  load_and_authorize_resource
 
   # GET /examples
   # GET /examples.json
+  $subcategories = Subcategory.all
   def index
     @examples = Example.all
+
   end
 
   # GET /examples/1
@@ -20,16 +24,18 @@ class ExamplesController < ApplicationController
 
   # GET /examples/1/edit
   def edit
+
   end
 
   # POST /examples
   # POST /examples.json
   def create
+    
     @example = Example.new(example_params)
 
     respond_to do |format|
       if @example.save
-        format.html { redirect_to @example, notice: 'Example was successfully created.' }
+        format.html { redirect_to @example, notice: 'Ejemplo creado exitosamente.' }
         format.json { render :show, status: :created, location: @example }
       else
         format.html { render :new }
@@ -41,9 +47,10 @@ class ExamplesController < ApplicationController
   # PATCH/PUT /examples/1
   # PATCH/PUT /examples/1.json
   def update
+    
     respond_to do |format|
       if @example.update(example_params)
-        format.html { redirect_to @example, notice: 'Example was successfully updated.' }
+        format.html { redirect_to @example, notice: 'Ejemplo actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @example }
       else
         format.html { render :edit }
@@ -57,7 +64,7 @@ class ExamplesController < ApplicationController
   def destroy
     @example.destroy
     respond_to do |format|
-      format.html { redirect_to examples_url, notice: 'Example was successfully destroyed.' }
+      format.html { redirect_to examples_url, notice: 'Ejemplo eliminado exitosamente.' }
       format.json { head :no_content }
     end
   end

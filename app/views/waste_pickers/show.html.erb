@@ -1,34 +1,34 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @waste_picker.name %>
 </p>
 
 <p>
-  <strong>Affiliation:</strong>
+  <strong>Asociacion</strong>
   <%= @waste_picker.affiliation ? @waste_picker.affiliation.name : 'N/A' %>
 </p>
 
 <p>
-  <strong>Birth date:</strong>
+  <strong>Fecha de Nacimiento:</strong>
   <%= @waste_picker.birth_date %>
 </p>
 
 <p>
-  <strong>Start date:</strong>
+  <strong>Fecha de Inicio:</strong>
   <%= @waste_picker.start_date %>
 </p>
 
 <p>
-  <strong>Background:</strong>
+  <strong>Historial:</strong>
   <%= @waste_picker.background %>
 </p>
 
 <p>
-  <strong>Message:</strong>
+  <strong>Mensaje:</strong>
   <%= @waste_picker.message %>
 </p>
 
-<%= link_to 'Edit', edit_waste_picker_path(@waste_picker) %> |
-<%= link_to 'Back', waste_pickers_path %>
+<%= link_to 'Editar', edit_waste_picker_path(@waste_picker) %> |
+<%= link_to 'Atras', waste_pickers_path %>

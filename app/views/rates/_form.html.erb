@@ -1,29 +1,28 @@
 <%= form_for(@rate) do |f| %>
-  <% if @rate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
-
-      <ul>
+<div class="row">
+<div class="col-md-6">
+  
       <% @rate.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+      <div class="alert alert-danger">
+        *<%= message %>
+      </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :Titulo %><br>
+    <%= f.text_field :title,:class=>"form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :Descripcion %><br>
+    <%= f.text_area :description ,:class=>"form-control"%>
   </div>
-  <div class="field">
-    <%= f.label :image_name %><br>
-    <%= f.text_field :image_name %>
+  <div class="form-group">
+    <%= f.label :Nombre_Imagen %><br>
+    <%= f.text_field :image_name,:class=>"form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" ,:class=>"btn btn-primary"%>
+  </div>
+  </div>
   </div>
 <% end %>

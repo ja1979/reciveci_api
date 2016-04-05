@@ -1,11 +1,17 @@
-<h1>Listing rates</h1>
-
-<table>
+<h1 class="text-center">Listing rates</h1>
+<br>
+<div class="col-md-2 col-md-offset-6 ">
+<%= link_to  new_rate_path do%>
+<span class="glyphicon glyphicon-plus-sign")%></span>
+  <% end %>
+  </div>
+<br>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image name</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Nombre de la Imagen</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,12 +19,20 @@
   <tbody>
     <% @rates.each do |rate| %>
       <tr>
-        <td><%= rate.title %></td>
+        <td><%= link_to rate.title ,rate%></td>
         <td><%= rate.description %></td>
         <td><%= rate.image_name %></td>
-        <td><%= link_to 'Show', rate %></td>
-        <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
-        <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+        <td><%= link_to edit_rate_path(rate) do%>
+        <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+
+        </td>
+        <td><%= link_to rate, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+        <span class="glyphicon glyphicon-remove-sign"%></span>
+        <% end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Rate', new_rate_path %>
+

@@ -1,14 +1,21 @@
-<h1 class="text-center">Listing waste_pickers</h1>
-
+<h1 class="text-center">Lista de Recicladores</h1>
+<br>
+<div  class="col-md-2 col-md-offset-6 col-sm-offset-6">
+<%= link_to new_waste_picker_path do%>
+<span class="glyphicon glyphicon-user "></span>
+<%end%>
+</div>
+<br>
+<br>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Affiliation</th>
-      <th>Birth date</th>
-      <th>Start date</th>
-      <th>Background</th>
-      <th>Message</th>
+      <th>Nombre</th>
+      <th>Asociacion</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Fecha de Inicio</th>
+      <th>Historial</th>
+      <th>Mensaje</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,15 +23,22 @@
   <tbody>
     <% @waste_pickers.each do |waste_picker| %>
       <tr>
-        <td><%= waste_picker.name %></td>
+        <td><%= link_to waste_picker.name , waste_picker%></td>
         <td><%= waste_picker.affiliation ? waste_picker.affiliation.name : 'N/A' %></td>
         <td><%= waste_picker.birth_date %></td>
         <td><%= waste_picker.start_date %></td>
         <td><%= waste_picker.background %></td>
         <td><%= waste_picker.message %></td>
-        <td><%= link_to 'Show', waste_picker %></td>
-        <td><%= link_to 'Edit', edit_waste_picker_path(waste_picker) %></td>
-        <td><%= link_to 'Destroy', waste_picker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+        <td><%= link_to edit_waste_picker_path(waste_picker) do%>
+        <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
+        </td>
+
+        <td><%= link_to waste_picker, method: :delete, data: { confirm: 'Esta Seguro?' } do%>
+        <span class="glyphicon glyphicon-remove-sign"></span>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Waste picker', new_waste_picker_path %>
+

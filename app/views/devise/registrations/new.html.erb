@@ -14,8 +14,18 @@
     <%= f.text_field :username, autofocus: true,:class=>"form-control" %>
   </div>
 
+<<<<<<< HEAD
   <div class="form-group">
     <%= f.label t('login.password')%>
+=======
+  <div class="field">
+    <%= f.label :role, "Rol de usuario" %><br />
+    <%= f.collection_select :role, User::Roles, :to_s, :humanize %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password , "Contraseña"%>
+>>>>>>> 017ac489fa0864a8827bbb95eb19018b29772879
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> <%=t('login.caracter')%>)</em>
     <% end %><br />

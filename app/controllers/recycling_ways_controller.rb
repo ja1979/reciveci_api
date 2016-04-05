@@ -1,5 +1,6 @@
 class RecyclingWaysController < ApplicationController
   before_action :set_recycling_way, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /recycling_ways
   # GET /recycling_ways.json
