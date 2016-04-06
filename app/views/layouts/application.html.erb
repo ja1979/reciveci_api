@@ -8,30 +8,31 @@
   </head>
   <body>
     <div class="container">
-    	<p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <p class="error"><%= flash[:error] %></p>
+      <% if notice %>
+      	<h4 class="notice alert alert-success"><%= notice %></h4>
+      <% end %>
+      <% if alert %>
+        <h4 class="alert alert alert-info"><%= alert %></h4>
+      <% end %>
+      <% if flash %>
+        <h4 class="error"><%= flash[:error] %></h4>
+      <% end %>
 
       <div id="user_nav">
       	<% if user_signed_in? %>
-      	Bienvenido <%= current_user.email %>
-      	<%= link_to "Cerrar Sesión", destroy_user_session_path %>
+        	<h4>Bienvenido <%= current_user.email %></h4>
+            <% if can? :manage, User %>
+              <%= link_to "Crear Usuario", new_user_path %>
+            <% end %>
+          <%= link_to "Mi Cuenta", edit_user_registration_path %>
+        	<%= link_to "Cerrar Sesión", destroy_user_session_path %>
       	<% else %>
       	<%= link_to "Iniciar Sesión", new_user_session_path %>
       	<% end %>	
       </div>
 
-      <% if user_signed_in? %>
-        <div class="admin">
-          <% if can? :manage, User %>
-            <%= link_to "Crear Usuario", new_user_path %>
-          <% end %>
-          <%= link_to "Mi Cuenta", edit_user_registration_path %>
-        </div>
-      <% end %>
-
-      <%= yield %>
-        
+      <%= yield %>    
+          
     </div>
   </body>
 </html>
