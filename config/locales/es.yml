@@ -67,7 +67,7 @@ es:
       locked: "Su cuenta está bloqueada."
       not_found_in_database: "Correo o contraseña inválidos."
       timeout: "Su sesión ha expirado, por favor ingrese nuevamente para continuar."
-      unauthenticated: "Necesita ingresar o registrarse para continuar."
+      unauthenticated: "Necesita ingresar para continuar."
       unconfirmed: "Debe confirmar su cuenta para continuar."
     mailer:
       confirmation_instructions:
