@@ -44,7 +44,8 @@ class ApplicationController < ActionController::Base
 
   #enviar mensaje para de acceso denegado
   rescue_from CanCan::AccessDenied do |exception|
-     redirect_to 'http://localhost:3000/users/sign_in' ,:flash => { :error => "NO tienes Permisos para realizar esta acción." }
+     #redirect_to dashboard_path ,:flash => { :error => "NO tienes Permisos para realizar esta acción." }
+     redirect_to dashboard_path 
   end
 
 end
