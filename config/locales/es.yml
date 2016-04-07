@@ -50,7 +50,7 @@ es:
     mensaje_c: "Asociacion exitosamente creada."
     mensaje_u: "Asociacion exitosamente actualizada."
 
-<<<<<<< HEAD
+
   login:
     title: "Iniciar Sesion"
     email: "Correo"
@@ -70,7 +70,7 @@ es:
 
 
 
-=======
+
   dashboard:
     username: "Nombre de Usuario" 
     email: "E-mail"
@@ -133,6 +133,6 @@ es:
       not_saved:
         one: "1 error evitó que este %{resource} fuera guardado:"
         other: "%{count} errores evitaron que este %{resource} fuera guardado:"
->>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
+
 
 

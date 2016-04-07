@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-<head>
-  <title>Rails4Example</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="container">
-<br>
-<br>
-	<p id="notice"class='text-center'><%=notice%></p>
-  <p class="alert"><%= alert %></p>
-  <p class="error"><%= flash[:error] %></p>
 
-    <div id="user_nav">
-    	<% if user_signed_in? %>
-    	<%=t('login.welcome')%><%= current_user.email %><%=t('login.no_you')%>
-    	<%= link_to t('login.log_out'), destroy_user_session_path %>
-    	<% else %>
-    	<%= link_to t('login.sign_up'), new_user_registration_path %> o
-    	<%= link_to t('login.sign_in'), new_user_session_path %>
-    	<% end %>	
-=======
   <head>
     <title>Rails4Example</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -57,7 +34,7 @@
 
       <%= yield %>    
           
->>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
+
     </div>
   </body>
 </html>

@@ -1,25 +1,17 @@
-
-
-
-
+<p id="notice"><%=notice%></p>
 
 <div class="panel panel-primary">
 <div class="panel-heading">
 
 	<p>
-  <strong>Titulo:</strong>
+  <strong><%=t('articles.wtitle')%>:</strong>
   <%= @article.title %>
 </p>
  
 </div>
 
-<<<<<<< HEAD
-<div class="thumbnail">
-<div class="col-md-offset-5">
-=======
 
 <div class="col-md-offset-1">
->>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
 <p>
   <%= image_tag avatar_url(@article) ,class:"img-thumbnail" %>
 </p>
@@ -28,7 +20,7 @@
 
 <div class="panel-body">
 	<p>
-  <strong>Contenido:</strong>
+  <strong><%=t('articles.content')%>:</strong>
 
   <%= @article.content %>
 </p>
@@ -39,8 +31,6 @@
 	
 </div>
 <% if can? :update, @article %>
-	<%= link_to "Editar", edit_article_path(@article) %> |
+	<%= link_to t('general.edit'), edit_article_path(@article) %> |
 <% end %>	
-<%= link_to "Atras", articles_path %>
-
-
+<%= link_to t('general.back'), articles_path %>

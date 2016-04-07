@@ -1,10 +1,7 @@
 Rails.application.routes.draw do 
 
-<<<<<<< HEAD
 
-=======
   scope "(:locale)", locale:  /es|en/ do
->>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
     devise_for :users, :controllers => {:registrations => "registrations"} 
@@ -53,13 +50,7 @@ Rails.application.routes.draw do
 
     get 'separate' => 'separate#complete'   
 
-<<<<<<< HEAD
-  get 'separate' => 'separate#complete'
-  
 
-
-  
-=======
   end
->>>>>>> 52ec9813d4fed3691a5e77e5c4e0c5de46727892
+
 end
