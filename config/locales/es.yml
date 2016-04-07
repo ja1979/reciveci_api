@@ -24,9 +24,9 @@ es:
       new: "Nuevo"
       show: "Mostrar"
       edit: "Editar"
-      remove: "eliminar"
+      remove: "Eliminar"
       back: "Atras"
-      confirm: "Esta seguro?"
+      confirm: "¿Está seguro de que desea eliminar?"
       btn_save: "Guardar"
 
   articles:

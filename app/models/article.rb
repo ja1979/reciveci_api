@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
 	#attr_accessor :image
 	IMAGENES=File.join Rails.root , 'public','assets','images','articles'
 
+
 	#	def initialize(attributes={})
 	#		super
 	#		@image_url ||= "Hola"
@@ -10,6 +11,8 @@ class Article < ActiveRecord::Base
 	validates :title , presence:true 
 	validates :content , presence:true 
 	validates :extension , presence: { message:"Debe subir la imagen"}
+
+	
 
 
 	def image_url

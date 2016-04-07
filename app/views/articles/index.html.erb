@@ -1,7 +1,8 @@
-<h1 class="text-center"><%=t('articles.title')%></h1>
+<%= stylesheet_link_tag "articles" %>
+<h1 class="text-center"><%=t('Noticias')%></h1>
 <div class="container">
 
-<div class="col-md-2 col-md-offset-6 col-sm-offset-6">
+<div class="text-center">
   <%= link_to new_article_path do %>
     <span class="glyphicon glyphicon-file " data-toggle="tooltip" title=<%=t('general.new')%>></span>
   <% end %>
