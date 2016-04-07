@@ -1,16 +1,16 @@
-<h2 class="text-center"><%=t('login.forgot')%></h2>
+<h2 class="text-center">Olvido su contraseña ?</h2>
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label t('login.email') %><br />
+    <%= f.label :Correo %><br />
     <%= f.email_field :email, autofocus: true ,:class=>"form-control"%>
   </div>
 
   <div class="actions">
-    <%= f.submit t('login.instructions'),:class=>"btn btn-primary"%>
+    <%= f.submit "Enviar instrucciones",:class=>"btn btn-primary"%>
   </div>
   <%= render "devise/shared/links" %>
   </div>
