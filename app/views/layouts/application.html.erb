@@ -17,7 +17,10 @@
       <% if alert %>
         <h4 class="alert alert alert-info"><%= alert %></h4>
       <% end %>
-      <% if flash %>
+      <% if flash[:info] %>
+        <h4 class="error"><%= flash[:info] %></h4>
+      <% end %>
+      <% if flash[:error] %>
         <h4 class="error"><%= flash[:error] %></h4>
       <% end %>
 

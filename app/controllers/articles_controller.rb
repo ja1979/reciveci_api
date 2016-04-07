@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
         id: article.id,
         title: article.title,
         content: article.content,
-        image: article.image_url ? url_prefix + article.image_url : nil,
+        image_url:article.image_url ? url_prefix + article.image_url : nil,
         created_at: article.created_at
         }
     end
