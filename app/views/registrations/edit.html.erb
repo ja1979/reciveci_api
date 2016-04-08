@@ -1,42 +1,51 @@
 <h2>Editar Cuenta<%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <% @user.errors.full_messages.each do |message|%>
+    <div class="alert alert-danger">
+      * <%= message %>
+    </div>
+  <%end%>
+
+  <div class="row">
+  <div class="col-md-5">
   
   <div class="form-group ">
-    <p><%= f.label :username %><br />
-    <%= f.text_field :username %></p>
+    <p><%= f.label :Nombre_Usuario%><br />
+    <%= f.text_field :username ,:class=>"form-control" %></p>
   </div>
 
   <div class="form-group ">
-    <p><%= f.label :email %><br />
-    <%= f.text_field :email %></p>
+    <p><%= f.label :Correo %><br />
+    <%= f.text_field :email ,:class=>"form-control"%></p>
   </div>  
 
   <div class="form-group ">
-    <p><%= f.label :password %> <i>(Dejar en blanco si no quieres cambiarla)</i><br />
-    <%= f.password_field :password %></p>
+    <p><%= f.label :Contraseña %> <i>(Dejar en blanco si no quieres cambiarla)</i><br />
+    <%= f.password_field :password ,:class=>"form-control"%></p>
   </div>
 
   <div class="form-group ">
-    <p><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></p>
+    <p><%= f.label :Confirmar_contraseña%><br />
+    <%= f.password_field :password_confirmation ,:class=>"form-control"%></p>
   </div>
 
   <div class="form-group ">
     <p><%= f.label :current_password %> <i>(necesitamos tu contraseña actual para confirmar los cambios)</i><br />
-    <%= f.password_field :current_password %></p>
+    <%= f.password_field :current_password ,:class=>"form-control"%></p>
   </div>
   
 
   <% if can? :manage, User %>
     <div class="form-group ">
-      <p><%= f.label :role %>: <%= f.collection_select :role, User::Roles, :to_s, :humanize %></p>
+      <p><%= f.label :role %>: 
+      <%= f.collection_select :role, User::Roles, :to_s, :humanize ,{prompt:"Selecione un rol....."},{class:"form-control"}%></p>
+       <% end %>
     </div>
-  <% end %>
+ 
   
   <div class="form-group ">
-    <p><%= f.submit "Actualizar" %></p>
+    <p><%= f.submit "Actualizar" ,:class=>"btn btn-primary"%></p>
   </div> 
 <% end %>
 
@@ -45,4 +54,5 @@
 <p>Decepcionad@? <%= link_to "Cancelar mi Cuenta", registration_path(resource_name), data: {:confirm => "Estas seguro?"}, :method => :delete %>.</p>
 
 <%= link_to "Atras", :back %>
-
+</div>
+</div>
