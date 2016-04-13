@@ -6,7 +6,7 @@
 <div class="text-center">
 
   <%= link_to new_article_path do %>
-    <span class="glyphicon glyphicon-file " data-toggle="tooltip" title=<%=t('general.new')%>></span>
+    <span class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo"></span>
   <% end %>
 </div>
 
@@ -14,8 +14,8 @@
 <br>
 <table class="table table-hover">
   <tr>
-    <th><%=t('articles.wtitle')%></th>
-    <th><%=t('articles.content')%></th>
+    <th>Titulo</th>
+    <th>Contenido</th>
     <th colspan="3"></th>
   </tr>
   <% @articles.each do |article| %>
@@ -23,11 +23,11 @@
       <td> <%= link_to article.title, article_path(article)%></td>
       <td><%= article.content %></td>
       <td><%= link_to  edit_article_path(article) do%>
-          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title=<%=t('general.edit')%>></span>
+          <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
           <% end %>
       </td>
-      <td><%= link_to  article_path(article),method: :delete,data: { confirm: t('general.confirm')} do%>
-        <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title=<%=t('general.remove')%>></span>
+      <td><%= link_to  article_path(article),method: :delete,data: { confirm: 'Esta seguro?'} do%>
+        <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
         <% end %>
       </td>
     

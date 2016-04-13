@@ -1,11 +1,11 @@
-<p id="notice"><%=notice%></p>
+
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-
-	<p>
-  <strong><%=t('articles.wtitle')%>:</strong>
+<p class="text-center">
+  <strong >
   <%= @article.title %>
+  </strong>
 </p>
  
 </div>
@@ -19,15 +19,22 @@
 
 <div class="col-md-offset-1">
 
+
+
+<div class="thumbnail">
+<div class="text-center">
+
+
 <p>
   <%= image_tag avatar_url(@article) ,class:"img-thumbnail" %>
 </p>
 </div>
+</div>
 
 
 <div class="panel-body">
-	<p>
-  <strong><%=t('articles.content')%>:</strong>
+<p>
+  <strong>Contenido:</strong>
 
   <%= @article.content %>
 </p>
@@ -38,6 +45,6 @@
 	
 </div>
 <% if can? :update, @article %>
-	<%= link_to t('general.edit'), edit_article_path(@article) %> |
+	<%= link_to "Editar", edit_article_path(@article) %> |
 <% end %>	
-<%= link_to t('general.back'), articles_path %>
+<%= link_to "Atras", articles_path %>
