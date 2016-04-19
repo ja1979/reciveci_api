@@ -78,6 +78,7 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
-
 gem 'bootstrap-datepicker-rails'
 
+#gema para el suso de AngularJs
+gem "angularjs-rails"

@@ -1,9 +1,6 @@
 Rails.application.routes.draw do 
 
-
-
   scope "(:locale)", locale:  /es|en/ do
-
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
     devise_for :users, :controllers => {:registrations => "registrations"} 
@@ -52,11 +49,19 @@ Rails.application.routes.draw do
 
     get 'separate' => 'separate#complete'   
 
+    get 'separate' => 'separate#complete'
 
-  get 'separate' => 'separate#complete'
-  
-
-
+    #creacion de rutas para el uso del API  de articles
+    namespace :api, defaults:{ format: :json } do
+      namespace :v1 do
+        #resources :api_articles, :only => [:show, :create, :update, :destroy, :index]
+        get     "/articles",     to: "api_articles#index"
+        post    "/articles",     to: "api_articles#create"
+        get     "/articles/:id", to: "api_articles#show"
+        put     "/articles/:id", to: "api_articles#update"
+        delete  "/articles/:id", to: "api_articles#destroy"
+      end
+    end 
   end
 
 end

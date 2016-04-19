@@ -14,12 +14,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require angular
+//= require angular-resource
+//= require angular-route
+//= require api_articles
 //= require_tree .
+//= require_tree ./angular
 
 
-
-//funcion para crear el date picker en waste_picker
  
+/*//= require turbolinks
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require_tree .*/
 
 
-  
+
