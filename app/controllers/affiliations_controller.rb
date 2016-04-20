@@ -2,8 +2,37 @@ class AffiliationsController < ApplicationController
   before_action :set_affiliation, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+     # GET /affiliations/affiliations.json
+    def last
+    @affiliations = Affiliation.order('name ASC').limit(10)
+
+    #sleep(1)
+
+    #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
+    
+    @result = Array.new
+
+    @affiliations.each do |affiliation|
+      @result << {
+        id: affiliation.id,
+        nombre:affiliation.name,
+        sector: affiliation.sector,
+        direccion: affiliation.direccion,
+        telefono: affiliation.phone1,
+        email: affiliation.email,
+        publish: affiliation.publish,
+
+        }
+    end
+
+    respond_to do |format|
+      format.json { render json: @result }
+    end
+  end
+
   # GET /affiliations
   # GET /affiliations.json
+
   def index
     @affiliations = Affiliation.all
   end
@@ -71,6 +100,6 @@ class AffiliationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def affiliation_params
-      params.require(:affiliation).permit(:name)
+      params.require(:affiliation).permit(:name , :sector , :direccion , :phone1 ,:email , :publish)
     end
 end

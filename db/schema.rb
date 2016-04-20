@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160413034959) do
+=======
+ActiveRecord::Schema.define(version: 20160413202739) do
+>>>>>>> 377594f84d4987539c4737e6c9043185829340a8
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sector"
+    t.string   "email"
+    t.string   "phone1"
+    t.boolean  "publish",    limit: 255
+    t.string   "direccion"
   end
 
   create_table "articles", force: true do |t|

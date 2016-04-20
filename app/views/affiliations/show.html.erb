@@ -5,5 +5,30 @@
   <%= @affiliation.name %>
 </p>
 
+<p>
+  <strong>Sector:</strong>
+  <%= @affiliation.sector %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @affiliation.direccion %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @affiliation.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @affiliation.phone1 %>
+</p>
+
+<p>
+  <strong>publish:</strong>
+  <%= @affiliation.publish %>
+</p>
+
 <%= link_to "Editar", edit_affiliation_path(@affiliation) %> |
 <%= link_to "Atras", affiliations_path %>

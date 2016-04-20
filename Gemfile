@@ -54,10 +54,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
+end
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -71,11 +75,22 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'autoprefixer-rails'
 
 gem 'bootstrap-datepicker-rails'
 #gema usada para convertir una direccion en  latitud y longitud
 gem 'geocoder'
 
+#gema para el suso de AngularJs
+gem "angularjs-rails"
+
+#is a helpful gem that makes working with angular templates far easier. 
+gem 'angular-rails-templates'
+
+#para trabajar con rutas en Angularjs
+gem 'angular-ui-router-rails'
+
+gem 'angular-ui-bootstrap-rails'
