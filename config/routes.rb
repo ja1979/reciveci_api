@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+
+
+ 
+
   scope "(:locale)", locale:  /es|en/ do
 
 
@@ -24,6 +28,12 @@ Rails.application.routes.draw do
     resources :articles
     get 'articles_last' => 'articles#last'
     get 'articles_count' => 'articles#count'
+
+
+
+     resources :bussines
+    get 'map/bussines'
+   
 
 
     resources :affiliations

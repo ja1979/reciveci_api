@@ -76,4 +76,6 @@ gem 'autoprefixer-rails'
 
 
 gem 'bootstrap-datepicker-rails'
+#gema usada para convertir una direccion en  latitud y longitud
+gem 'geocoder'
 
