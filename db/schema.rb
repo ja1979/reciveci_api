@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160413034959) do
-=======
 ActiveRecord::Schema.define(version: 20160413202739) do
->>>>>>> 377594f84d4987539c4737e6c9043185829340a8
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
