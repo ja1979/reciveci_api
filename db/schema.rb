@@ -11,12 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330201446) do
+ActiveRecord::Schema.define(version: 20160413202739) do
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sector"
+    t.string   "email"
+    t.string   "phone1"
+    t.boolean  "publish",    limit: 255
+    t.string   "direccion"
   end
 
   create_table "articles", force: true do |t|
