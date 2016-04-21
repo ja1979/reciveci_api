@@ -1,0 +1,17 @@
+<div id="articles">
+	<h1 class="text-center">Noticias</h1>
+
+	<table class="table table-hover">
+	  <tr>
+	    <th>Titulo</th>
+	    <th>Contenido</th>
+	    <th colspan="3"></th>
+	  </tr>
+    <tr ng-repeat="article in articles">
+      <td>{{article.title}}</td>
+      <td>{{article.content}}</td>
+      <td><span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span></td>
+    </tr>
+	</table>
+</div>
+s

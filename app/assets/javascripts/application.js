@@ -16,18 +16,16 @@
 //= require bootstrap-sprockets
 //= require angular
 //= require angular-resource
-//= require angular-route
-//= require api_articles
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require articles_module
 //= require_tree .
 //= require_tree ./angular
+//= require_tree ../templates
 
 
  
-/*//= require turbolinks
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap-sprockets
-//= require_tree .*/
+
 
 
 

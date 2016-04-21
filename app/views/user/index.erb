@@ -1,13 +1,5 @@
+<div ui-view></div>
 <% if can? :manage, User %>
-<div ng-controller="articlesCtrl">
-  <h1>esto es del Ctrl {{message}}</h1>
-  <div>
-    <ul ng-repeat="article in articles">
-      <li><h3>{{ article.title }}</h3></li>
-    </ul>
-  </div>
-</div>
-
   <table class="table table-hover">
 	  <tr>
 	    <th>Nombre de Usuario</th>

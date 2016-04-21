@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :articles
     get 'articles_last' => 'articles#last'
     get 'articles_count' => 'articles#count'
-
+    
 
     resources :affiliations
 
@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     get 'categories_by_column/:column' => 'categories#by_column'
 
     resources :waste_pickers
+    resources :news
     
     #resources :articles, :defaults => { :format => :json }
 

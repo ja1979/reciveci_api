@@ -75,10 +75,18 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
 gem 'bootstrap-sass', '~> 3.2.0'
+
 gem 'autoprefixer-rails'
 
 gem 'bootstrap-datepicker-rails'
 
 #gema para el suso de AngularJs
 gem "angularjs-rails"
+
+#is a helpful gem that makes working with angular templates far easier. 
+gem 'angular-rails-templates'
+
+#para trabajar con rutas en Angularjs
+gem 'angular-ui-router-rails'
