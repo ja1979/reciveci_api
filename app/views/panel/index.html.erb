@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+	<div id="menu">
+		<ul class="nav nav-tabs">
+		  <li><a ui-sref="articles">Noticias</a></li>
+		  <li><a ui-sref="categorias">Categorias</a></li>
+		</ul>
+	</div>
+<% end %> 
+<div ui-view></div>

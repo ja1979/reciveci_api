@@ -63,6 +63,9 @@ Rails.application.routes.draw do
         delete  "/articles/:id", to: "api_articles#destroy"
       end
     end 
+
+    #panel donde se encontrara el menu de navegacion para acceder a todas las pantallas de administracion
+     get '/panel' => 'panel#index'
   end
 
 end
