@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :articles
     get 'articles_last' => 'articles#last'
     get 'articles_count' => 'articles#count'
-
+    
 
     resources :affiliations
     get 'affiliations_last' => 'affiliations#last'
@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     get 'categories_by_column/:column' => 'categories#by_column'
 
     resources :waste_pickers
+    resources :news
     
     #resources :articles, :defaults => { :format => :json }
 
@@ -63,6 +64,9 @@ Rails.application.routes.draw do
         delete  "/articles/:id", to: "api_articles#destroy"
       end
     end 
+
+    #panel donde se encontrara el menu de navegacion para acceder a todas las pantallas de administracion
+     get '/panel' => 'panel#index'
   end
 
 end

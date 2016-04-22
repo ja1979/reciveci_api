@@ -6,17 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <div class="col-md-offset-1">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Cuenta</a></li>
-        <li role="presentation"><a href="#">Noticias</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-      </ul>
-    </div>
+  <body>  
     <div class="container">
       <% if notice %>
       	<h4 class="notice alert alert-success"><%= notice %></h4>
@@ -27,7 +17,6 @@
       <% if flash[:info] %>
         <h4 class="error"><%= flash[:info] %></h4>
       <% end %>
-      
 
       <div id="user_nav">
       	<% if user_signed_in? %>
@@ -43,8 +32,6 @@
       </div>
 
       <%= yield %>    
-          
-
     </div>
   </body>
 </html>
