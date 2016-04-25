@@ -31,6 +31,7 @@ GEM
       railties (>= 3.1)
       sprockets (~> 2)
       tilt
+    angular-ui-bootstrap-rails (1.3.2)
     angular-ui-router-rails (0.2.15)
     angularjs-rails (1.5.0)
     arel (5.0.1.20140414130214)
@@ -139,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  angular-ui-bootstrap-rails
   angular-ui-router-rails
   angularjs-rails
   autoprefixer-rails

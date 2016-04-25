@@ -90,3 +90,5 @@ gem 'angular-rails-templates'
 
 #para trabajar con rutas en Angularjs
 gem 'angular-ui-router-rails'
+
+gem 'angular-ui-bootstrap-rails'

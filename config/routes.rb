@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     end 
 
     #panel donde se encontrara el menu de navegacion para acceder a todas las pantallas de administracion
-     get '/panel' => 'panel#index'
+     get '/admin' => 'panel#index'
   end
 
 end

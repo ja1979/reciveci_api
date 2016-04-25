@@ -1,4 +1,4 @@
-<div id="articles" ng-controller="articlesIdCtrl">
+<div id="articles" ng-controller="rmArticleCtrl">
 	<h1 class="text-center">Noticias</h1>
 
 	<div ui-view="show-article"></div> 
@@ -11,7 +11,7 @@
     <tr ng-repeat="article in articles">
       <td><a ui-sref=".id({id: article.id})">{{article.title}}</a></td>
       <td>{{article.content}}</td>
-      <td><a ng-click="remove_article(article)"><span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar" ></span></a></td>
+      <td><a ng-click="removeArticle(article)"><span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar" ></span></a></td>
     </tr>
 	</table>
 	
