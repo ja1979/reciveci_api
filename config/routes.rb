@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     
 
     resources :affiliations
+    get 'affiliations_last' => 'affiliations#last'
 
     resources :line_strings
 
