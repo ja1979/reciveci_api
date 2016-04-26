@@ -1,14 +1,6 @@
 Rails.application.routes.draw do 
 
 
-
-
-
-
- 
-
-
-
   scope "(:locale)", locale:  /es|en/ do
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
