@@ -1,5 +1,14 @@
 Rails.application.routes.draw do 
 
+
+
+
+
+
+ 
+
+
+
   scope "(:locale)", locale:  /es|en/ do
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
@@ -22,6 +31,12 @@ Rails.application.routes.draw do
     get 'articles_last' => 'articles#last'
     get 'articles_count' => 'articles#count'
     
+
+
+     resources :bussines
+    get 'map/bussines'
+   
+
 
     resources :affiliations
     get 'affiliations_last' => 'affiliations#last'
@@ -66,7 +81,7 @@ Rails.application.routes.draw do
     end 
 
     #panel donde se encontrara el menu de navegacion para acceder a todas las pantallas de administracion
-     get '/panel' => 'panel#index'
+     get '/admin' => 'panel#index'
   end
 
 end

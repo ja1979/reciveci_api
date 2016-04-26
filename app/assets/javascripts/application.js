@@ -15,8 +15,10 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require angular-animate
 //= require angular-resource
 //= require angular-ui-router
+//= require angular-ui-bootstrap
 //= require angular-rails-templates
 //= require articles_module
 //= require_tree .

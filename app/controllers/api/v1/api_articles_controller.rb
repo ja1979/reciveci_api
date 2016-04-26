@@ -1,11 +1,15 @@
 class Api::V1::ApiArticlesController < ApplicationController
 	before_action :set_article, only: [:show, :update, :destroy]
-	respond_to :json
+	#respond_to :json
 	skip_before_filter :verify_authenticity_token
 
 
 	def index     
-    respond_with Article.all
+    #respond_with Article.all
+    @articles = Article.all
+    respond_to do |format|
+      format.json { render json: @articles }
+    end
   end
 
 

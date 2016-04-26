@@ -1,7 +1,7 @@
 include Utils
 
 class MapController < ApplicationController
-  load_and_authorize_resource :except => [:routes]
+  load_and_authorize_resource :except => [:routes,:bussines]
 
   after_filter :cors_set_access_control_headers
 
@@ -15,7 +15,7 @@ class MapController < ApplicationController
 
   def routes
     
-    @line_strings = LineString.where("route_id is not null")
+    @line_strings = LineString.all
 
 
     #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
@@ -60,5 +60,46 @@ class MapController < ApplicationController
       format.json { render json: @geojson }
     end
   end
+
+
+  def bussines
+
+    @negocios = Bussine.all
+
+    @geojson_x = Array.new
+
+
+    @negocios.each do |negocio|
+      @geojson_x << {
+
+        
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates:[[negocio.longitude],[negocio.latitude]]
+          },
+        properties: {
+          :'name' => negocio.name,
+          
+          :'address' => negocio.address,
+          
+          
+        }
+      }
+
+    end
+
+    respond_to do |format|
+      format.json { render json: @geojson_x }
+      
+    end
+
+  end
+
+
+
+
+
+
 
 end
