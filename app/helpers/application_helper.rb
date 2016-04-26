@@ -12,4 +12,16 @@ module ApplicationHelper
     extension=@article.extension
     "/assets/images/articles/#{id}.#{extension}?#{fecha_id}"
   end
+
+  def profile_url(article)
+  #time=@article.created_at.to_s(:time)   
+    fecha_id = Digest::MD5::hexdigest(generate_activation_code).downcase
+    id=@affiliation.id
+    extension=@affiliation.extension
+    "/assets/images/affiliations/#{id}.#{extension}?#{fecha_id}"
+  end
+
+
+
+
 end

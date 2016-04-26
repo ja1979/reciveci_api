@@ -9,8 +9,10 @@ class AffiliationsController < ApplicationController
     #sleep(1)
 
     #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
-    
-    @result = Array.new
+
+    url_prefix = serverUrl(request)
+
+      @result = Array.new
 
     @affiliations.each do |affiliation|
       @result << {
@@ -20,7 +22,9 @@ class AffiliationsController < ApplicationController
         direccion: affiliation.direccion,
         telefono: affiliation.phone1,
         email: affiliation.email,
+        image_url:affiliation.image_url ? url_prefix + affiliation.image_url : nil,
         publish: affiliation.publish,
+        extension:affiliation.extension
 
         }
     end
@@ -100,6 +104,6 @@ class AffiliationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def affiliation_params
-      params.require(:affiliation).permit(:name , :sector , :direccion , :phone1 ,:email , :publish)
+      params.require(:affiliation).permit(:name , :sector , :direccion , :phone1 ,:email , :publish ,:image,:extension)
     end
 end
