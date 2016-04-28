@@ -14,7 +14,9 @@ class AffiliationsController < ApplicationController
 
       @result = Array.new
 
+
     @affiliations.each do |affiliation|
+      if(affiliation.publish==true)
       @result << {
         id: affiliation.id,
         nombre:affiliation.name,
@@ -27,6 +29,7 @@ class AffiliationsController < ApplicationController
         extension:affiliation.extension
 
         }
+      end
     end
 
     respond_to do |format|

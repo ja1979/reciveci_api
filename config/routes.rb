@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
 
     resources :affiliations
-    get 'affiliations_last' => 'affiliations#last'
+    get 'api/v1/affiliations' => 'affiliations#last'
 
     resources :line_strings
 
