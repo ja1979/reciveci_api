@@ -1,7 +1,7 @@
 include Utils
 
 class MapController < ApplicationController
-  load_and_authorize_resource :except => [:routes,:bussines]
+  load_and_authorize_resource :except => [:routes,:business]
 
   after_filter :cors_set_access_control_headers
 
@@ -62,26 +62,26 @@ class MapController < ApplicationController
   end
 
 
-  def bussines
+  def business
 
-    @negocios = Bussine.all
+    @businesses= Business.all
 
     @geojson_x = Array.new
 
 
-    @negocios.each do |negocio|
+    @businesses.each do |business|
       @geojson_x << {
 
         
         type: 'Feature',
         geometry: {
           type: 'Point',
-          coordinates:[[negocio.longitude],[negocio.latitude]]
+          coordinates:[business.longitude,business.latitude]
           },
         properties: {
-          :'name' => negocio.name,
+          :'name' => business.name,
           
-          :'address' => negocio.address,
+          :'address' => business.address,
           
           
         }

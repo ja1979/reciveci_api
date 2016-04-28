@@ -1,6 +1,8 @@
 Rails.application.routes.draw do 
 
 
+  
+
   scope "(:locale)", locale:  /es|en/ do
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
@@ -25,8 +27,8 @@ Rails.application.routes.draw do
     
 
 
-     resources :bussines
-    get 'map/bussines'
+     resources :businesses
+    get 'map/business'
    
 
 
