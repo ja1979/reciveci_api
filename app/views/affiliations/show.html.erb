@@ -32,5 +32,13 @@
   <%= @affiliation.publish %>
 </p>
 
+<div class="thumbnail">
+<div class="text-center">
+<p>
+  <%= image_tag profile_url(@affiliation) ,class:"img-thumbnail" %>
+</p>
+</div>
+</div>
+
 <%= link_to "Editar", edit_affiliation_path(@affiliation) %> |
 <%= link_to "Atras", affiliations_path %>
