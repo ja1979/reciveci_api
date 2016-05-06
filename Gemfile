@@ -94,3 +94,8 @@ gem 'angular-rails-templates'
 gem 'angular-ui-router-rails'
 
 gem 'angular-ui-bootstrap-rails'
+
+
+gem 'angularjs-file-upload-rails', '~> 2.2.0'
+
+gem 'carrierwave'

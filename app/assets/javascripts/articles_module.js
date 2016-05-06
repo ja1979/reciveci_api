@@ -15,11 +15,16 @@ angular
                         controller: 'articlesIdCtrl'
                           }
                     }                
-              })
+            })
             .state('categorias',{
                 url:'/categorias',
                 templateUrl: 'categorias/all_categorias.html'
               })
+            .state('newArticle',{
+                url:'article/new',                
+                templateUrl: "articles/newArticle.html",
+                controller :'newArticleCtrl'
+            })
 }])
 
 

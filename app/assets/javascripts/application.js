@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require angularjs-file-upload
 //= require angular-animate
 //= require angular-resource
 //= require angular-ui-router

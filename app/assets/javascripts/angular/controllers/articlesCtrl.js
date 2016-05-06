@@ -21,5 +21,12 @@ angular.module('articles_module')
         $articles_service.delete({id: article.id});
         $scope.articles = $articles_service.query();            
       }  
-    }) 
+    })
+    .controller('newArticleCtrl',function ($scope, $articles_service){
+        $scope.article = {};        
+         $scope.saveArticle = function(article){
+            //$articles_service.save({ "article": article });
+            console.log(article)
+        }        
+    })
 
