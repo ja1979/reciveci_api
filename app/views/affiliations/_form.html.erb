@@ -1,6 +1,8 @@
 <%= form_for(@affiliation) do |f| %>
   
-
+<br>
+<%=link_to "Ubicar Coordenadas","http://www.mapcoordinates.net/es",:target=>'_blank'%>
+<br>
 
   <% @affiliation.errors.full_messages.each do |message| %>
     <div class="alert alert-danger">
@@ -13,11 +15,18 @@
     <%= f.text_field :name ,:class=>'form-control'%>
   </div>
 
+<div class="form-group">
+    <%=f.label :Ciudad%><br>
+    <%= f.text_field :ciudad ,:class=>'form-control'%>
+  </div>
+
+
   <div class="form-group">
     <%=f.label :Sector%><br>
     <%= f.text_field :sector ,:class=>'form-control'%>
   </div>
 
+  
    <div class="form-group">
     <%=f.label :Direccion%><br>
     <%= f.text_field :direccion ,:class=>'form-control'%>
@@ -27,6 +36,16 @@
    <div class="form-group">
     <%=f.label :Telefono%><br>
     <%= f.text_field :phone1 ,:class=>'form-control'%>
+  </div>
+
+   <div class="form-group">
+    <%=f.label :Latitud%><br>
+    <%= f.text_field :latitude ,:class=>'form-control'%>
+  </div>
+
+   <div class="form-group">
+    <%=f.label :Longitud%><br>
+    <%= f.text_field :longitud ,:class=>'form-control'%>
   </div>
 
   <div class="form-group">

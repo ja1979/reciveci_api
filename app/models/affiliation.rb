@@ -10,6 +10,8 @@ too_short:"%{count} es el minimo de caracteres"
 	validates :sector , presence:{ message:"Debe ingresar el sector al que pertenece la asociacion"}
 	validates :direccion , presence:{ message:"Debe ingresar la direccion de la asociacion"}
 	validates :phone1 , presence:{ message:"Debe ingresar el telefono de la asociacion"}
+	validates :latitude , presence:{ message:"Debe ingresar latitud de la asociacion"}
+	validates :longitud , presence:{ message:"Debe ingresar longitud de la asociacion"}
 	 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email , presence:{ message:"Debe ingresar el email de la asociacion"},format: { 
 		:with => VALID_EMAIL_REGEX , message: "El formato del correo es invalido" }

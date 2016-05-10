@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425150839) do
+ActiveRecord::Schema.define(version: 20160510114850) do
 
   create_table "affiliations", force: true do |t|
     t.string   "name"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20160425150839) do
     t.boolean  "publish",    limit: 255
     t.string   "direccion"
     t.string   "extension"
+    t.string   "ciudad"
+    t.float    "latitude"
+    t.float    "longitud"
   end
 
   create_table "articles", force: true do |t|

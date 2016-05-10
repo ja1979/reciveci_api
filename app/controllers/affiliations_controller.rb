@@ -4,7 +4,7 @@ class AffiliationsController < ApplicationController
 
      # GET /affiliations/affiliations.json
     def last
-    @affiliations = Affiliation.order('name ASC').limit(10)
+    #@affiliations = Affiliation.order('name ASC').limit(10)
 
     #sleep(1)
 
@@ -20,9 +20,12 @@ class AffiliationsController < ApplicationController
       @result << {
         id: affiliation.id,
         nombre:affiliation.name,
+        ciudad:affiliation.ciudad,
         sector: affiliation.sector,
         direccion: affiliation.direccion,
         telefono: affiliation.phone1,
+        latitud:affiliation.latitude,
+        longitud:affiliation.longitud,
         email: affiliation.email,
         image_url:affiliation.image_url ? url_prefix + affiliation.image_url : nil,
         publish: affiliation.publish,
@@ -107,6 +110,6 @@ class AffiliationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def affiliation_params
-      params.require(:affiliation).permit(:name , :sector , :direccion , :phone1 ,:email , :publish ,:image,:extension)
+      params.require(:affiliation).permit(:name ,:ciudad , :sector , :direccion , :phone1 ,:email ,:latitude,:longitud, :publish ,:image,:extension)
     end
 end
