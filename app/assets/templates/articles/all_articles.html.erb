@@ -1,5 +1,10 @@
 <div id="articles" ng-controller="rmArticleCtrl">
 	<h1 class="text-center">Noticias</h1>
+	
+	<div class="text-center">
+	 	<span ui-sref="newArticle" class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo"></span>
+	</div>
+	
 
 	<div ui-view="show-article"></div> 
 	<table class="table table-hover">

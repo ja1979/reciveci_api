@@ -1,6 +1,7 @@
+
 class Api::V1::ApiArticlesController < ApplicationController
-	before_action :set_article, only: [:show, :update, :destroy]
-	#respond_to :json
+	before_action :set_article, only: [:show, :edit, :update, :destroy]
+	respond_to :json
 	skip_before_filter :verify_authenticity_token
 
 
@@ -29,23 +30,27 @@ class Api::V1::ApiArticlesController < ApplicationController
    end
   end
 
-	def update
-    if @article.update(article_params)
-      render json: @article, status: 200
-    else
-      render json: { errors: @article.errors }, status: 422
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        format.json { render :show, status: :ok, location: @article }
+      else
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+      end
     end
   end
+
 
   def destroy
     @article.destroy
     head 204
   end
 
-  protected
-	  def article_params
-	    params.require(:article).permit(:title, :content, :extension, :image)
-	  end
+  private
+    def article_params
+      #params[:article]
+      params.require(:article).permit(:title, :content , :image, :extension)   
+    end
 
   private
   # Use callbacks to share common setup or constraints between actions.

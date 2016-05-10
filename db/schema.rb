@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160510114850) do
     t.string   "extension"
   end
 
+<<<<<<< HEAD
+=======
   create_table "businesses", force: true do |t|
     t.string   "name"
     t.string   "address"
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160510114850) do
     t.datetime "updated_at"
   end
 
+>>>>>>> d4e1429ff93567d0afebba63b976288e47730780
   create_table "categories", force: true do |t|
     t.string   "name"
     t.text     "description", limit: 255
