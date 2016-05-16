@@ -2,6 +2,8 @@ class AffiliationsController < ApplicationController
   before_action :set_affiliation, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
+
+
      # GET /affiliations/affiliations.json
     def last
     #@affiliations = Affiliation.order('name ASC').limit(10)
@@ -16,8 +18,10 @@ class AffiliationsController < ApplicationController
 
 
     @affiliations.each do |affiliation|
+      grupoCiudad=getCiudad(affiliation.ciudad);
       if(affiliation.publish==true)
       @result << {
+        Grupo:grupoCiudad,
         id: affiliation.id,
         nombre:affiliation.name,
         ciudad:affiliation.ciudad,
