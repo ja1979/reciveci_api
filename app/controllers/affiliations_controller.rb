@@ -18,10 +18,10 @@ class AffiliationsController < ApplicationController
 
 
     @affiliations.each do |affiliation|
-      grupoCiudad=getCiudad(affiliation.ciudad);
+      #grupoCiudad=getCiudad(affiliation.ciudad);
       if(affiliation.publish==true)
       @result << {
-        Grupo:grupoCiudad,
+        #Grupo:grupoCiudad,
         id: affiliation.id,
         nombre:affiliation.name,
         ciudad:affiliation.ciudad,
