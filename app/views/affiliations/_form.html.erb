@@ -16,8 +16,9 @@
   </div>
 
 <div class="form-group">
-    <%=f.label :Ciudad%><br>
-    <%= f.text_field :ciudad ,:class=>'form-control'%>
+    <%= f.label :Ciudades%><br />
+    
+    <%= f.collection_select(:ciudad,City.all, :name, :name, {prompt:"Seleccione"},{class:"form-control"})%>
   </div>
 
 

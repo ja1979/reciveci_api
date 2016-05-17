@@ -42,6 +42,7 @@ include Utils
       acopio=getAffliation(city.name);
       if(acopio.length>0)
       @result << {
+        id:city.id,
         Ciudad:city.name,
         CentrosAcopio:acopio
         }

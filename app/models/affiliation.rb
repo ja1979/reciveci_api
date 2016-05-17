@@ -17,7 +17,7 @@ too_short:"%{count} es el minimo de caracteres"
 		:with => VALID_EMAIL_REGEX , message: "El formato del correo es invalido" }
 	validates :extension , presence: { message:"Debe subir una imagen para la asociacion"}
 
-
+	belongs_to :city
 
 	IMAGENES=File.join Rails.root , 'public','assets','images','affiliations'
 
