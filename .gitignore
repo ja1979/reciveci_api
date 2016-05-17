@@ -23,3 +23,6 @@
 
 # Ignore images in articles
 #/public/**/articles/*
+
+# Ignore images in affiliations
+#/public/**/affiliations/*

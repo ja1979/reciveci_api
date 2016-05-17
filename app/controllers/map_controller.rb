@@ -1,7 +1,7 @@
 include Utils
 
 class MapController < ApplicationController
-  load_and_authorize_resource :except => [:routes,:business]
+  load_and_authorize_resource :except => [:routes,:business,:affiliations]
 
   after_filter :cors_set_access_control_headers
 
@@ -93,8 +93,44 @@ class MapController < ApplicationController
       format.json { render json: @geojson_x }
       
     end
+end
 
-  end
+
+    def affiliations
+
+      @affiliations= Affiliation.all
+
+      @geojson_y = Array.new
+
+
+      @affiliations.each do |affiliation|
+        if(affiliation.publish==true)
+          @geojson_y << {
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates:[affiliation.longitud,affiliation.latitude]
+              },
+            properties: {
+              :'name' => affiliation.name,
+          
+              :'address' => affiliation.direccion,
+            }
+          }
+
+        end
+      end
+
+          respond_to do |format|
+            format.json { render json: @geojson_y }
+      
+          end
+
+end
+
+
+
+
 
 
 

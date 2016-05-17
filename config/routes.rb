@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   
 
+  resources :cities
+
   scope "(:locale)", locale:  /es|en/ do
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
@@ -31,9 +33,11 @@ Rails.application.routes.draw do
     get 'map/business'
    
 
-
+    resources:cities
+    get 'api/v1/cities'=>'cities#affXcity'
     resources :affiliations
     get 'api/v1/affiliations' => 'affiliations#last'
+    get 'map/affiliations'  
 
     resources :line_strings
 
