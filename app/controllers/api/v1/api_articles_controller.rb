@@ -16,6 +16,7 @@ class Api::V1::ApiArticlesController < ApplicationController
 
 	def show
   	respond_to do |format|
+      #format.json { render json: @article}
       format.json { render json: @article, methods: [:image_url] }
     end
 	end
@@ -24,7 +25,7 @@ class Api::V1::ApiArticlesController < ApplicationController
    article=Article.new(article_params) 
     # if the article is saved successfully than respond with json data and status code 201
     if article.save 
-    render json: article, status: 201
+    render json: @article, status: 201    
    else
     render json: { errors: article.errors}, status: 422
    end

@@ -1,5 +1,8 @@
 class Article < ActiveRecord::Base
-	#attr_accessor :image
+	#attr_accessible :gallery_id, :name, :image
+  	belongs_to :articles
+  	mount_uploader :image, ImageUploader
+	attr_accessor :image
 	IMAGENES=File.join Rails.root , 'public','assets','images','articles'
 
 
@@ -15,7 +18,7 @@ class Article < ActiveRecord::Base
 		maximum:500,
 		too_long:"%{count} caracteres es el maximo permitido",
 	}
-	validates :extension , presence: { message:"Debe subir la imagen"}
+	#validates :extension , presence: { message:"Debe subir la imagen"}
 
 	
 
