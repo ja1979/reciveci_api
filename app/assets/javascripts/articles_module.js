@@ -1,5 +1,5 @@
 angular
-    .module('articles_module', ['ngResource', 'ui.router', 'templates', 'ngAnimate','ui.bootstrap' ])
+    .module('articles_module', ['ngResource', 'ui.router', 'templates', 'ngAnimate','ui.bootstrap','ngFileUpload'])
     .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
         $stateProvider
             .state('articles',{
