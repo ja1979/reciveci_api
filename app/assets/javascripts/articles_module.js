@@ -1,6 +1,6 @@
 angular
-    .module('articles_module', ['ngResource', 'ui.router', 'templates', 'ngAnimate','ui.bootstrap','ngFileUpload'])
-    .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){
+    .module('articles_module', ['ngResource', 'ui.router', 'templates', 'ngAnimate','ui.bootstrap'])
+    .config(['$urlRouterProvider', '$stateProvider',function($urlRouterProvider, $stateProvider){ 
         $stateProvider
             .state('articles',{
               url:'/articles',
@@ -26,5 +26,6 @@ angular
                 controller :'newArticleCtrl'
             })
 }])
+
 
 

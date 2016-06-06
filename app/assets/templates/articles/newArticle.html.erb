@@ -1,9 +1,9 @@
 
-<form ng-submit="save()" name="newArticle">
+<form name="newArticle">
 	<h1 class="text-center">Nuevo Articulo</h1>
   <div class="alert alert-danger"></div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="title">Titulo</label>
     <input type="text" name="title" placeholder="Titulo" ng-model="article.title">
   </div>
@@ -11,14 +11,16 @@
   <div class="form-group">
     <label for="content">Contenido</label>
     <input type="text" name="content" placeholder="Contenido" ng-model="article.content">
-  </div>
+  </div> -->
 
   <div class="form-group">
-    <input type="file"  ngf-select ng-model="article.file">
+    <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" ngf-max-size="2MB" required
+             ngf-model-invalid="errorFile">
   </div>     
 
   <div class="form-group">
-    <input type="submit" value="Guardar">
+    <input type="submit"  ng-click="uploadPic(picFile)" value="Guardar">
   </div>
 </form>
 

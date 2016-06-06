@@ -14,9 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require angular-file-upload/angular-file-upload-shim
 //= require angular
-//= require angular-file-upload
 //= require angular-animate
 //= require angular-resource
 //= require angular-ui-router
@@ -25,6 +23,7 @@
 //= require articles_module
 //= require_tree .
 //= require_tree ./angular
+//= require_tree ./bower_components
 //= require_tree ../templates
 
 

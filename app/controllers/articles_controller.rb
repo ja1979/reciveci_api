@@ -1,6 +1,7 @@
 include Utils
 
 class ArticlesController < ApplicationController
+  include ActionView::Helpers::TextHelper
   load_and_authorize_resource
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   after_filter :cors_set_access_control_headers
@@ -87,13 +88,15 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @article.content = auto_link(@article.content, :html => { :target => '_blank' })
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-
+    @article.content = auto_link(@article.content, :html => { :target => '_blank' })
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Articulo creado exitosamente' }
@@ -107,7 +110,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
-  def update
+  def update    
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Articulo actualizado exitosamente' }
@@ -133,6 +136,7 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

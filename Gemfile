@@ -95,6 +95,4 @@ gem 'angular-ui-router-rails'
 
 gem 'angular-ui-bootstrap-rails'
 
-gem 'angular-file-upload-rails', '~> 1.6.1.1'
-
-gem 'carrierwave'
+gem "rails_autolink"

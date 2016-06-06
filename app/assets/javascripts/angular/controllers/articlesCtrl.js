@@ -6,7 +6,7 @@ angular.module('articles_module')
     .controller('articlesIdCtrl',function ($scope, $articles_service, $stateParams) {
         $scope.articlesId = $articles_service.get({id: $stateParams.id});
 
-    })
+    }) //eliminar con presencia de un ALERT
     // .controller('rmArticleCtrl', function ($scope, $articles_service, $stateParams, $window){
     //     $scope.removeArticle = function(article){
     //         var deleteUser = $window.confirm('Estas seguro?');
@@ -22,7 +22,7 @@ angular.module('articles_module')
         $scope.articles = $articles_service.query();            
       }  
     })
-    .controller('newArticleCtrl',function ($scope, $articles_service, Upload, $timeout){
+    .controller('newArticleCtrl',function ($scope, $articles_service){
         /*$scope.article = {};  
         $scope.saveArticle = function(article){
             //$articles_service.save({ "article": article });
@@ -36,22 +36,14 @@ angular.module('articles_module')
             console.log(title);
             console.log(content);
             
-        }*/
+        }*/     
         $scope.uploadPic = function(file) {
             file.upload = Upload.upload({
-              url: '/api/v1/articles/:id',
-              method: 'POST',
-              fields: { 'article[title]': $scope.title,'article[content]': $scope.content },
-              file: file,
-              fileFormDataName: 'article[image]'
-            });
-
-            file.upload.then(function (response) {
-              $timeout(function () {
-                file.result = response.data;
-              });
-            })
-        }    
+              url: 'https://localhost:3000/reciveci_api/public/uploads/article/image/',
+              data: {image: file},
+            });  
+         }
+        
     })
     /*.directive('uploaderModel',['$parse',function ($parse){
         return{
