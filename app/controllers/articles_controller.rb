@@ -88,7 +88,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @article.content = auto_link(@article.content, :html => { :target => '_blank' })
+    #@article.content = auto_link(@article.content, :html => { :target => '_blank' })
   end
 
   # POST /articles
@@ -136,6 +136,7 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+      @article.content = auto_link(@article.content, :html => { :target => '_blank' })
 
     end
 
