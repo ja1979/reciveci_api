@@ -99,6 +99,7 @@ end
     def affiliations
 
       @affiliations= Affiliation.all
+      url_prefix = serverUrl(request)
 
       @geojson_y = Array.new
 
@@ -115,6 +116,12 @@ end
               :'name' => affiliation.name,
           
               :'address' => affiliation.direccion,
+              :'image_url' => affiliation.image_url ? url_prefix + affiliation.image_url : nil,
+              :'sector' => affiliation.sector,
+              :'telefono' => affiliation.phone1,
+              :'email' => affiliation.email,
+
+
             }
           }
 
