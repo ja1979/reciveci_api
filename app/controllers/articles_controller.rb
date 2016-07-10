@@ -1,18 +1,10 @@
 include Utils
+include ActionView::Helpers::TextHelper
 
 class ArticlesController < ApplicationController
-  include ActionView::Helpers::TextHelper
   load_and_authorize_resource
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   after_filter :cors_set_access_control_headers
-  
-
-  def cors_set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-    headers['Access-Control-Max-Age'] = "1728000"
-  end
-
 
   # GET /articles/last.json
   def last
@@ -96,7 +88,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.content = auto_link(@article.content, :html => { :target => '_blank' })
-    
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Articulo creado exitosamente' }
@@ -110,7 +102,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
-  def update    
+  def update
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Articulo actualizado exitosamente' }

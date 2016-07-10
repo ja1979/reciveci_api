@@ -1,20 +1,14 @@
 class AffiliationsController < ApplicationController
-  before_action :set_affiliation, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  before_action :set_affiliation, only: [:show, :edit, :update, :destroy]
 
 
-
-     # GET /affiliations/affiliations.json
-    def last
-    #@affiliations = Affiliation.order('name ASC').limit(10)
-
-    #sleep(1)
-
-    #url_prefix = request.protocol + request.host + ":" + request.port.to_s + "/"
+   # GET /affiliations/affiliations.json
+  def last
 
     url_prefix = serverUrl(request)
 
-      @result = Array.new
+    @result = Array.new
 
 
     @affiliations.each do |affiliation|
@@ -64,7 +58,7 @@ class AffiliationsController < ApplicationController
   # GET /affiliations/1/edit
   def edit
   end
-  
+
 
   # POST /affiliations
   # POST /affiliations.json

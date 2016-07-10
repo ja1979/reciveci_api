@@ -1,7 +1,8 @@
+include Utils
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
-include Utils
   respond_to :html
+  after_filter :cors_set_access_control_headers
 
   def getAffliation(ciudad)
     url_prefix = serverUrl(request)
@@ -32,11 +33,11 @@ include Utils
 
 
   def affXcity
-   
+
     url_prefix = serverUrl(request)
       cities=City.all.order('name ASC').limit(10)
       @result = Array.new
-  
+
 
     cities.each do |city|
       acopio=getAffliation(city.name);
@@ -48,7 +49,7 @@ include Utils
         }
       end
     end
-    
+
 
     respond_to do |format|
       format.json { render json: @result }

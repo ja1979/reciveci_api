@@ -1,14 +1,14 @@
-Rails.application.routes.draw do 
+Rails.application.routes.draw do
 
 
-  
+
 
   resources :cities
 
   scope "(:locale)", locale:  /es|en/ do
 
     #establecemos el controlador registrations personalizado para usarlo en Devise
-    devise_for :users, :controllers => {:registrations => "registrations"} 
+    devise_for :users, :controllers => {:registrations => "registrations"}
     devise_scope :user do
         get '/login' => 'devise/sessions#new'
         get '/logout' => 'devise/sessions#destroy'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
     resources :user, :controller => "user"
     get 'dashboard' => "dashboard#index"
-    get 'user' => "user#index"    
+    get 'user' => "user#index"
 
     resources :examples
 
@@ -26,18 +26,18 @@ Rails.application.routes.draw do
     resources :articles
     get 'articles_last' => 'articles#last'
     get 'articles_count' => 'articles#count'
-    
+
 
 
      resources :businesses
     get 'map/business'
-   
+
 
     resources:cities
     get 'api/v1/cities'=>'cities#affXcity'
     resources :affiliations
     get 'api/v1/affiliations' => 'affiliations#last'
-    get 'map/affiliations'  
+    get 'map/affiliations'
 
     resources :line_strings
 
@@ -57,13 +57,11 @@ Rails.application.routes.draw do
 
     resources :waste_pickers
     resources :news
-    
+
     #resources :articles, :defaults => { :format => :json }
 
     get 'map/routes'
-
-    get 'separate' => 'separate#complete'   
-
+    
     get 'separate' => 'separate#complete'
 
     #creacion de rutas para el uso del API  de articles
@@ -76,7 +74,7 @@ Rails.application.routes.draw do
         put     "/articles/:id", to: "api_articles#update"
         delete  "/articles/:id", to: "api_articles#destroy"
       end
-    end 
+    end
 
     #panel donde se encontrara el menu de navegacion para acceder a todas las pantallas de administracion
      get '/admin' => 'panel#index'

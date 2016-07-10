@@ -2,6 +2,7 @@ include Utils
 
 class SeparateController < ApplicationController
   load_and_authorize_resource  :except => [:complete]
+  after_filter :cors_set_access_control_headers
 
   def getSubcategories(category_id, url_prefix)
 
