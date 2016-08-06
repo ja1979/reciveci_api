@@ -1,3 +1,4 @@
+prueba de funcionamiento de repo reciveci
 # Rails 4 Sample App on OpenShift #
 Quickstart rails 4 application for openshift.
 
